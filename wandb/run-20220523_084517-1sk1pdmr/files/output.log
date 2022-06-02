@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "main_torch.py", line 73, in <module>
-    logger, final_output_dir, tb_log_dir = create_logger(config, args.cfg, 'train')
-  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/utils/utils.py", line 84, in create_logger
-    tensorboard_log_dir = Path(cfg.LOG_DIR) / dataset / model / \
-  File "/usr/local/lib/python3.7/dist-packages/yacs/config.py", line 141, in __getattr__
-    raise AttributeError(name)
-AttributeError: LOG_DIR
-=> creating /content/drive/MyDrive/jax_exercise/output/swinv2_tiny/default/imagenet/swint_torch
