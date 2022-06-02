@@ -1,0 +1,127 @@
+=> creating /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch
+=> creating /content/drive/MyDrive/jax_exercise/log/imagenet/swinv2_tiny/swint_torch_2022-05-23-09-18
+Creating dataloaders...
+Loading Swin Transformer v2 model...
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_torch.yaml', data_path=None, disable_amp=False, eval=False, name='swint_torch', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenetv2-matched-frequency-format-val
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 1000
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 7
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+/usr/local/lib/python3.7/dist-packages/torch/functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Epoch: [0/300] Iter:[0/125], Time: 3.60, lr: [0.0005, 0.0005], Loss: 7.029762
+Epoch: [0/300] Iter:[10/125], Time: 0.60, lr: [0.0005, 0.0005], Loss: 7.024147
+Epoch: [0/300] Iter:[20/125], Time: 0.45, lr: [0.0005, 0.0005], Loss: 7.013691
+Epoch: [0/300] Iter:[30/125], Time: 0.40, lr: [0.0005, 0.0005], Loss: 6.994694
+Epoch: [0/300] Iter:[40/125], Time: 0.37, lr: [0.0005, 0.0005], Loss: 6.995699
+Epoch: [0/300] Iter:[50/125], Time: 0.35, lr: [0.0005, 0.0005], Loss: 6.981776
+Epoch: [0/300] Iter:[60/125], Time: 0.34, lr: [0.0005, 0.0005], Loss: 6.963761
+Epoch: [0/300] Iter:[70/125], Time: 0.33, lr: [0.0005, 0.0005], Loss: 6.950248
+Epoch: [0/300] Iter:[80/125], Time: 0.33, lr: [0.0005, 0.0005], Loss: 6.938157
+Epoch: [0/300] Iter:[90/125], Time: 0.32, lr: [0.0005, 0.0005], Loss: 6.930160
+Epoch: [0/300] Iter:[100/125], Time: 0.32, lr: [0.0005, 0.0005], Loss: 6.921668
+Epoch: [0/300] Iter:[110/125], Time: 0.31, lr: [0.0005, 0.0005], Loss: 6.923330
+Epoch: [0/300] Iter:[120/125], Time: 0.31, lr: [0.0005, 0.0005], Loss: 6.924152
+Traceback (most recent call last):
+  File "main_torch.py", line 186, in <module>
+    writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 79, in validate_torch
+    accuracy = torch.mean(torch.FloatTensor(torch.argmax(pred, -1) == label))
+TypeError: expected TensorOptions(dtype=float, device=cpu, layout=Strided, requires_grad=false (default), pinned_memory=false (default), memory_format=(nullopt)) (got TensorOptions(dtype=bool, device=cuda:0, layout=Strided, requires_grad=false (default), pinned_memory=false (default), memory_format=(nullopt)))

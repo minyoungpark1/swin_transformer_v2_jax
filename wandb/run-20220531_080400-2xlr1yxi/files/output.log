@@ -1,0 +1,165 @@
+=> creating /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch
+=> creating /content/drive/MyDrive/jax_exercise/log/imagenet/swinv2_tiny/swint_torch_2022-05-31-08-04
+Creating dataloaders...
+Found 9469 files belonging to 10 classes.
+Found 3925 files belonging to 10 classes.
+Loading Swin Transformer v2 model...
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_torch.yaml', data_path=None, disable_amp=False, eval=False, name='swint_jax', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2
+  IMG_SIZE: 256
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 10
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 8
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 304
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+2022-05-31 08:04:05.032782: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:39] Overriding allow_growth setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker:
+Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+Traceback (most recent call last):
+  File "main_jax.py", line 175, in <module>
+    key1, writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 146, in train_jax
+    state, metrics, lr = train_step(state, batch, rng, criterion, lr_scheduler)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/traceback_util.py", line 162, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/api.py", line 468, in cache_miss
+    donated_invars=donated_invars, inline=inline)
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 1796, in bind
+    return call_bind(self, fun, *args, **params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 1812, in call_bind
+    outs = top_trace.process_call(primitive, fun_, tracers, params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 681, in process_call
+    return primitive.impl(f, *tracers, **params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 150, in _xla_call_impl
+    *arg_specs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/linear_util.py", line 285, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 198, in _xla_callable_uncached
+    *arg_specs).compile().unsafe_call
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/profiler.py", line 206, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 229, in lower_xla_callable
+    fun, abstract_args, pe.debug_info_final(fun, "jit"), which_explicit)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/profiler.py", line 206, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/interpreters/partial_eval.py", line 1855, in trace_to_jaxpr_final
+    fun, main, in_avals, keep_inputs=keep_inputs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/interpreters/partial_eval.py", line 1826, in trace_to_subjaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers_)
+  File "/usr/local/lib/python3.7/dist-packages/jax/linear_util.py", line 168, in call_wrapped
+    ans = self.f(*args, **dict(self.params, **kwargs))
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 113, in train_step
+    metrics['loss'] = loss
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 612, in __setitem__
+    def __setitem__(self, idx, val): return self.aval._setitem(self, idx, val)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/numpy/lax_numpy.py", line 4566, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+jax._src.traceback_util.UnfilteredStackTrace: TypeError: '<class 'jax.interpreters.partial_eval.DynamicJaxprTracer'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html
+The stack trace below excludes JAX-internal frames.
+The preceding is the original exception that occurred, unmodified.
+--------------------
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "main_jax.py", line 175, in <module>
+    key1, writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 146, in train_jax
+    state, metrics, lr = train_step(state, batch, rng, criterion, lr_scheduler)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 113, in train_step
+    metrics['loss'] = loss
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/numpy/lax_numpy.py", line 4566, in _unimplemented_setitem
+    raise TypeError(msg.format(type(self)))
+TypeError: '<class 'jax.interpreters.partial_eval.DynamicJaxprTracer'>' object does not support item assignment. JAX arrays are immutable. Instead of ``x[idx] = y``, use ``x = x.at[idx].set(y)`` or another .at[] method: https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.ndarray.at.html

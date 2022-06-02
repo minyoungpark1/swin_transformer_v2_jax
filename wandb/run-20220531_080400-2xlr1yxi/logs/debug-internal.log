@@ -1,0 +1,147 @@
+2022-05-31 08:04:01,566 INFO    MainThread:9261 [internal.py:wandb_internal():93] W&B internal server running at pid: 9261, started at: 2022-05-31 08:04:01.564257
+2022-05-31 08:04:01,568 INFO    WriterThread:9261 [datastore.py:open_for_write():75] open: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/run-2xlr1yxi.wandb
+2022-05-31 08:04:01,571 DEBUG   SenderThread:9261 [sender.py:send():232] send: header
+2022-05-31 08:04:01,571 DEBUG   SenderThread:9261 [sender.py:send():232] send: run
+2022-05-31 08:04:01,665 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: check_version
+2022-05-31 08:04:01,670 INFO    SenderThread:9261 [dir_watcher.py:__init__():197] watching files in: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files
+2022-05-31 08:04:01,670 INFO    SenderThread:9261 [sender.py:_start_run_threads():814] run started: 2xlr1yxi with start time 1653984240
+2022-05-31 08:04:01,670 DEBUG   SenderThread:9261 [sender.py:send():232] send: summary
+2022-05-31 08:04:01,673 INFO    SenderThread:9261 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-05-31 08:04:01,674 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: check_version
+2022-05-31 08:04:01,746 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: run_start
+2022-05-31 08:04:02,674 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_created():244] file/dir created: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/wandb-summary.json
+2022-05-31 08:04:03,860 DEBUG   HandlerThread:9261 [meta.py:__init__():35] meta init
+2022-05-31 08:04:03,861 DEBUG   HandlerThread:9261 [meta.py:__init__():49] meta init done
+2022-05-31 08:04:03,861 DEBUG   HandlerThread:9261 [meta.py:probe():209] probe
+2022-05-31 08:04:03,869 DEBUG   HandlerThread:9261 [git.py:repo():29] git repository is invalid
+2022-05-31 08:04:03,869 DEBUG   HandlerThread:9261 [meta.py:_save_pip():53] save pip
+2022-05-31 08:04:03,873 DEBUG   HandlerThread:9261 [meta.py:_save_pip():67] save pip done
+2022-05-31 08:04:03,873 DEBUG   HandlerThread:9261 [meta.py:probe():247] probe done
+2022-05-31 08:04:03,878 DEBUG   SenderThread:9261 [sender.py:send():232] send: files
+2022-05-31 08:04:03,879 INFO    SenderThread:9261 [sender.py:_save_file():948] saving file wandb-metadata.json with policy now
+2022-05-31 08:04:03,886 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-31 08:04:03,886 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: stop_status
+2022-05-31 08:04:03,972 DEBUG   SenderThread:9261 [sender.py:send():232] send: telemetry
+2022-05-31 08:04:03,976 DEBUG   SenderThread:9261 [sender.py:send():232] send: config
+2022-05-31 08:04:04,219 INFO    Thread-11 :9261 [upload_job.py:push():132] Uploaded file /tmp/tmpzaxzh30fwandb/19td9khm-wandb-metadata.json
+2022-05-31 08:04:04,683 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_created():244] file/dir created: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/requirements.txt
+2022-05-31 08:04:04,684 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_created():244] file/dir created: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/wandb-metadata.json
+2022-05-31 08:04:04,684 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_created():244] file/dir created: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/output.log
+2022-05-31 08:04:06,687 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_modified():257] file/dir modified: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/output.log
+2022-05-31 08:04:18,974 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-31 08:04:18,975 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: stop_status
+2022-05-31 08:04:32,010 DEBUG   SenderThread:9261 [sender.py:send():232] send: stats
+2022-05-31 08:04:32,738 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_modified():257] file/dir modified: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/config.yaml
+2022-05-31 08:04:34,038 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-31 08:04:34,039 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: stop_status
+2022-05-31 08:04:47,599 DEBUG   SenderThread:9261 [sender.py:send():232] send: telemetry
+2022-05-31 08:04:48,770 INFO    Thread-7  :9261 [dir_watcher.py:_on_file_modified():257] file/dir modified: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/output.log
+2022-05-31 08:04:49,986 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:49,987 DEBUG   SenderThread:9261 [sender.py:send():232] send: exit
+2022-05-31 08:04:49,987 INFO    SenderThread:9261 [sender.py:send_exit():368] handling exit code: 1
+2022-05-31 08:04:49,987 INFO    SenderThread:9261 [sender.py:send_exit():370] handling runtime: 48
+2022-05-31 08:04:49,990 INFO    SenderThread:9261 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-05-31 08:04:49,991 INFO    SenderThread:9261 [sender.py:send_exit():376] send defer
+2022-05-31 08:04:49,991 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:49,991 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:49,992 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 0
+2022-05-31 08:04:49,992 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:49,992 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 0
+2022-05-31 08:04:49,992 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 1
+2022-05-31 08:04:49,992 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:49,992 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 1
+2022-05-31 08:04:50,092 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,092 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 1
+2022-05-31 08:04:50,092 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 2
+2022-05-31 08:04:50,092 DEBUG   SenderThread:9261 [sender.py:send():232] send: stats
+2022-05-31 08:04:50,093 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:50,094 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:50,094 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 2
+2022-05-31 08:04:50,094 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:50,095 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,095 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 2
+2022-05-31 08:04:50,095 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 3
+2022-05-31 08:04:50,096 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:50,096 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 3
+2022-05-31 08:04:50,096 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,096 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 3
+2022-05-31 08:04:50,096 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 4
+2022-05-31 08:04:50,096 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:50,097 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 4
+2022-05-31 08:04:50,097 DEBUG   SenderThread:9261 [sender.py:send():232] send: summary
+2022-05-31 08:04:50,099 INFO    SenderThread:9261 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-05-31 08:04:50,100 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,100 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 4
+2022-05-31 08:04:50,100 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 5
+2022-05-31 08:04:50,100 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:50,101 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 5
+2022-05-31 08:04:50,101 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,101 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 5
+2022-05-31 08:04:50,188 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 6
+2022-05-31 08:04:50,189 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:50,189 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 6
+2022-05-31 08:04:50,189 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,190 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 6
+2022-05-31 08:04:50,190 INFO    SenderThread:9261 [dir_watcher.py:finish():312] shutting down directory watcher
+2022-05-31 08:04:50,196 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:50,773 INFO    SenderThread:9261 [dir_watcher.py:_on_file_modified():257] file/dir modified: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/wandb-summary.json
+2022-05-31 08:04:50,774 INFO    SenderThread:9261 [dir_watcher.py:_on_file_modified():257] file/dir modified: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/output.log
+2022-05-31 08:04:50,774 INFO    SenderThread:9261 [dir_watcher.py:_on_file_modified():257] file/dir modified: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/config.yaml
+2022-05-31 08:04:50,775 INFO    SenderThread:9261 [dir_watcher.py:finish():342] scan: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files
+2022-05-31 08:04:50,776 INFO    SenderThread:9261 [dir_watcher.py:finish():356] scan save: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/config.yaml config.yaml
+2022-05-31 08:04:50,777 INFO    SenderThread:9261 [dir_watcher.py:finish():356] scan save: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/wandb-summary.json wandb-summary.json
+2022-05-31 08:04:50,780 INFO    SenderThread:9261 [dir_watcher.py:finish():356] scan save: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/requirements.txt requirements.txt
+2022-05-31 08:04:50,783 INFO    SenderThread:9261 [dir_watcher.py:finish():356] scan save: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/wandb-metadata.json wandb-metadata.json
+2022-05-31 08:04:50,784 INFO    SenderThread:9261 [dir_watcher.py:finish():356] scan save: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/output.log output.log
+2022-05-31 08:04:50,787 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 7
+2022-05-31 08:04:50,788 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:50,788 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:50,791 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 7
+2022-05-31 08:04:50,791 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:50,792 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 7
+2022-05-31 08:04:50,792 INFO    SenderThread:9261 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-31 08:04:50,890 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:50,891 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:50,992 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:50,993 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:51,086 INFO    Thread-14 :9261 [upload_job.py:push():132] Uploaded file /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/requirements.txt
+2022-05-31 08:04:51,094 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:51,095 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:51,129 INFO    Thread-15 :9261 [upload_job.py:push():132] Uploaded file /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/output.log
+2022-05-31 08:04:51,129 INFO    Thread-12 :9261 [upload_job.py:push():132] Uploaded file /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/config.yaml
+2022-05-31 08:04:51,150 INFO    Thread-13 :9261 [upload_job.py:push():132] Uploaded file /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/files/wandb-summary.json
+2022-05-31 08:04:51,196 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:51,196 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:51,298 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:51,298 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:51,350 INFO    Thread-6  :9261 [sender.py:transition_state():389] send defer: 8
+2022-05-31 08:04:51,351 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:51,351 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 8
+2022-05-31 08:04:51,351 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:51,351 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 8
+2022-05-31 08:04:51,400 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:51,523 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 9
+2022-05-31 08:04:51,524 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:51,524 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:51,524 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 9
+2022-05-31 08:04:51,524 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:51,525 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 9
+2022-05-31 08:04:51,525 INFO    SenderThread:9261 [sender.py:transition_state():389] send defer: 10
+2022-05-31 08:04:51,525 DEBUG   SenderThread:9261 [sender.py:send():232] send: final
+2022-05-31 08:04:51,525 DEBUG   SenderThread:9261 [sender.py:send():232] send: footer
+2022-05-31 08:04:51,525 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: defer
+2022-05-31 08:04:51,526 INFO    HandlerThread:9261 [handler.py:handle_request_defer():164] handle defer: 10
+2022-05-31 08:04:51,526 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: defer
+2022-05-31 08:04:51,526 INFO    SenderThread:9261 [sender.py:send_request_defer():385] handle sender defer: 10
+2022-05-31 08:04:51,625 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-31 08:04:51,626 DEBUG   SenderThread:9261 [sender.py:send_request():246] send_request: poll_exit
+2022-05-31 08:04:51,626 INFO    SenderThread:9261 [file_pusher.py:join():150] waiting for file pusher
+2022-05-31 08:04:51,835 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: sampled_history
+2022-05-31 08:04:51,836 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: get_summary
+2022-05-31 08:04:51,837 DEBUG   HandlerThread:9261 [handler.py:handle_request():141] handle_request: shutdown
+2022-05-31 08:04:51,837 INFO    HandlerThread:9261 [handler.py:finish():806] shutting down handler
+2022-05-31 08:04:52,526 INFO    WriterThread:9261 [datastore.py:close():279] close: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/wandb/run-20220531_080400-2xlr1yxi/run-2xlr1yxi.wandb
+2022-05-31 08:04:52,734 INFO    SenderThread:9261 [sender.py:finish():1110] shutting down sender
+2022-05-31 08:04:52,734 INFO    SenderThread:9261 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-31 08:04:52,734 INFO    SenderThread:9261 [file_pusher.py:join():150] waiting for file pusher
+2022-05-31 08:04:52,736 INFO    MainThread:9261 [internal.py:handle_exit():80] Internal process exited

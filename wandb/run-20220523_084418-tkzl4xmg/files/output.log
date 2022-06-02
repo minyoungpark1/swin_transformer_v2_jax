@@ -1,0 +1,10 @@
+
+=> creating /content/drive/MyDrive/jax_exercise/swinv2_tiny/default
+Traceback (most recent call last):
+  File "main_torch.py", line 73, in <module>
+    logger, final_output_dir, tb_log_dir = create_logger(config, args.cfg, 'train')
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/utils/utils.py", line 62, in create_logger
+    root_output_dir.mkdir()
+  File "/usr/lib/python3.7/pathlib.py", line 1273, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/content/drive/MyDrive/jax_exercise/swinv2_tiny/default'

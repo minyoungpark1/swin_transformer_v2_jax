@@ -1,0 +1,1731 @@
+=> creating /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax
+=> creating /content/drive/MyDrive/jax_exercise/log/Imagenette2/swinv2_tiny/swint_jax_2022-06-02-01-22
+Creating dataloaders...
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_jax.yaml', data_path=None, disable_amp=False, eval=False, name='swint_jax', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: Imagenette2
+  DATA_PATH: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2
+  IMG_SIZE: 256
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 10
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 8
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 304
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+Found 9469 files belonging to 10 classes.
+2022-06-02 01:23:01.235159: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:39] Overriding allow_growth setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+Found 3925 files belonging to 10 classes.
+Loading Swin Transformer v2 model...
+Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker:
+Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+Epoch: [0/300] Iter:[0/148], Time: 36.5444, lr: 5.00003807246685e-07, Loss: 2.271763
+Epoch: [0/300] Iter:[10/148], Time: 3.7658, lr: 2.1875021047890186e-06, Loss: 2.214573
+Epoch: [0/300] Iter:[20/148], Time: 3.8486, lr: 3.875000402331352e-06, Loss: 2.175903
+Epoch: [0/300] Iter:[30/148], Time: 3.9247, lr: 5.562498699873686e-06, Loss: 2.145393
+Epoch: [0/300] Iter:[40/148], Time: 3.9791, lr: 7.2499969974160194e-06, Loss: 2.131948
+Epoch: [0/300] Iter:[50/148], Time: 3.9838, lr: 8.937495294958353e-06, Loss: 1.882473
+Epoch: [0/300] Iter:[60/148], Time: 3.9898, lr: 1.0624993592500687e-05, Loss: 1.864193
+Epoch: [0/300] Iter:[70/148], Time: 4.0037, lr: 1.231249189004302e-05, Loss: 2.059782
+Epoch: [0/300] Iter:[80/148], Time: 4.0085, lr: 1.3999990187585354e-05, Loss: 1.933350
+Epoch: [0/300] Iter:[90/148], Time: 4.0044, lr: 1.5687488485127687e-05, Loss: 1.888225
+Epoch: [0/300] Iter:[100/148], Time: 3.9970, lr: 1.7375015886500478e-05, Loss: 1.761210
+Epoch: [0/300] Iter:[110/148], Time: 3.9907, lr: 1.906251418404281e-05, Loss: 2.060758
+Epoch: [0/300] Iter:[120/148], Time: 3.9753, lr: 2.0749983377754688e-05, Loss: 1.944744
+Epoch: [0/300] Iter:[130/148], Time: 3.9675, lr: 2.243751077912748e-05, Loss: 2.057324
+Epoch: [0/300] Iter:[140/148], Time: 3.9376, lr: 2.4125009076669812e-05, Loss: 2.041622
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 1
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best1
+Saving checkpoint at step: 1
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint1
+Loss: 1.934, Mean Accuracy:  0.3168, Best Accuracy:  0.3168
+Epoch: [1/300] Iter:[0/148], Time: 0.9016, lr: 2.5475019356235862e-05, Loss: 1.816141
+Epoch: [1/300] Iter:[10/148], Time: 0.3777, lr: 2.7162517653778195e-05, Loss: 1.768561
+Epoch: [1/300] Iter:[20/148], Time: 0.3536, lr: 2.8849986847490072e-05, Loss: 1.909647
+Epoch: [1/300] Iter:[30/148], Time: 0.3450, lr: 3.053751424886286e-05, Loss: 1.984946
+Epoch: [1/300] Iter:[40/148], Time: 0.3407, lr: 3.2225012546405196e-05, Loss: 1.820087
+Epoch: [1/300] Iter:[50/148], Time: 0.3381, lr: 3.391251084394753e-05, Loss: 1.894743
+Epoch: [1/300] Iter:[60/148], Time: 0.3362, lr: 3.5600009141489863e-05, Loss: 1.833519
+Epoch: [1/300] Iter:[70/148], Time: 0.3351, lr: 3.72875074390322e-05, Loss: 1.871197
+Epoch: [1/300] Iter:[80/148], Time: 0.3341, lr: 3.897500573657453e-05, Loss: 1.790113
+Epoch: [1/300] Iter:[90/148], Time: 0.3334, lr: 4.0662504034116864e-05, Loss: 1.926459
+Epoch: [1/300] Iter:[100/148], Time: 0.3327, lr: 4.23500023316592e-05, Loss: 2.019523
+Epoch: [1/300] Iter:[110/148], Time: 0.3322, lr: 4.403750062920153e-05, Loss: 1.841742
+Epoch: [1/300] Iter:[120/148], Time: 0.3318, lr: 4.5724998926743865e-05, Loss: 1.895726
+Epoch: [1/300] Iter:[130/148], Time: 0.3315, lr: 4.74124972242862e-05, Loss: 1.733986
+Epoch: [1/300] Iter:[140/148], Time: 0.3313, lr: 4.910002462565899e-05, Loss: 2.009368
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 2
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best2
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best1
+Saving checkpoint at step: 2
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint2
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint1
+Loss: 1.846, Mean Accuracy:  0.3501, Best Accuracy:  0.3501
+Epoch: [2/300] Iter:[0/148], Time: 0.9238, lr: 5.045000580139458e-05, Loss: 2.085202
+Epoch: [2/300] Iter:[10/148], Time: 0.3814, lr: 5.2137504098936915e-05, Loss: 1.852945
+Epoch: [2/300] Iter:[20/148], Time: 0.3559, lr: 5.382500239647925e-05, Loss: 1.791251
+Epoch: [2/300] Iter:[30/148], Time: 0.3470, lr: 5.551250069402158e-05, Loss: 1.896768
+Epoch: [2/300] Iter:[40/148], Time: 0.3422, lr: 5.720002809539437e-05, Loss: 1.693775
+Epoch: [2/300] Iter:[50/148], Time: 0.3394, lr: 5.8887526392936707e-05, Loss: 1.886660
+Epoch: [2/300] Iter:[60/148], Time: 0.3375, lr: 6.0574995586648583e-05, Loss: 1.671124
+Epoch: [2/300] Iter:[70/148], Time: 0.3362, lr: 6.226249388419092e-05, Loss: 1.845414
+Epoch: [2/300] Iter:[80/148], Time: 0.3351, lr: 6.395002128556371e-05, Loss: 1.866188
+Epoch: [2/300] Iter:[90/148], Time: 0.3343, lr: 6.563751958310604e-05, Loss: 1.770980
+Epoch: [2/300] Iter:[100/148], Time: 0.3337, lr: 6.732501788064837e-05, Loss: 1.676109
+Epoch: [2/300] Iter:[110/148], Time: 0.3331, lr: 6.901248707436025e-05, Loss: 1.837082
+Epoch: [2/300] Iter:[120/148], Time: 0.3327, lr: 7.070001447573304e-05, Loss: 1.763720
+Epoch: [2/300] Iter:[130/148], Time: 0.3323, lr: 7.238751277327538e-05, Loss: 1.758729
+Epoch: [2/300] Iter:[140/148], Time: 0.3320, lr: 7.407501107081771e-05, Loss: 1.871151
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 3
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best3
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best2
+Saving checkpoint at step: 3
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint3
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint2
+Loss: 1.741, Mean Accuracy:  0.3882, Best Accuracy:  0.3882
+Epoch: [3/300] Iter:[0/148], Time: 0.9638, lr: 7.54249922465533e-05, Loss: 1.767493
+Epoch: [3/300] Iter:[10/148], Time: 0.3860, lr: 7.711249054409564e-05, Loss: 1.677412
+Epoch: [3/300] Iter:[20/148], Time: 0.3581, lr: 7.880001794546843e-05, Loss: 1.663627
+Epoch: [3/300] Iter:[30/148], Time: 0.3485, lr: 8.048751624301076e-05, Loss: 1.914826
+Epoch: [3/300] Iter:[40/148], Time: 0.3433, lr: 8.217501454055309e-05, Loss: 1.863918
+Epoch: [3/300] Iter:[50/148], Time: 0.3404, lr: 8.386254194192588e-05, Loss: 1.596676
+Epoch: [3/300] Iter:[60/148], Time: 0.3382, lr: 8.555001113563776e-05, Loss: 1.805342
+Epoch: [3/300] Iter:[70/148], Time: 0.3369, lr: 8.72375094331801e-05, Loss: 1.731343
+Epoch: [3/300] Iter:[80/148], Time: 0.3357, lr: 8.892500773072243e-05, Loss: 1.837714
+Epoch: [3/300] Iter:[90/148], Time: 0.3350, lr: 9.061250602826476e-05, Loss: 1.753489
+Epoch: [3/300] Iter:[100/148], Time: 0.3342, lr: 9.23000043258071e-05, Loss: 1.372558
+Epoch: [3/300] Iter:[110/148], Time: 0.3337, lr: 9.398750262334943e-05, Loss: 1.583314
+Epoch: [3/300] Iter:[120/148], Time: 0.3332, lr: 9.567500092089176e-05, Loss: 1.881077
+Epoch: [3/300] Iter:[130/148], Time: 0.3328, lr: 9.736252832226455e-05, Loss: 1.671754
+Epoch: [3/300] Iter:[140/148], Time: 0.3325, lr: 9.905002661980689e-05, Loss: 1.661202
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 4
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best4
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best3
+Saving checkpoint at step: 4
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint4
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint3
+Loss: 1.649, Mean Accuracy:  0.4363, Best Accuracy:  0.4363
+Epoch: [4/300] Iter:[0/148], Time: 0.8179, lr: 0.00010040000779554248, Loss: 1.575306
+Epoch: [4/300] Iter:[10/148], Time: 0.3730, lr: 0.00010208750609308481, Loss: 1.709132
+Epoch: [4/300] Iter:[20/148], Time: 0.3518, lr: 0.00010377500439062715, Loss: 1.594086
+Epoch: [4/300] Iter:[30/148], Time: 0.3440, lr: 0.00010546253179199994, Loss: 1.749348
+Epoch: [4/300] Iter:[40/148], Time: 0.3401, lr: 0.00010715000098571181, Loss: 1.702854
+Epoch: [4/300] Iter:[50/148], Time: 0.3377, lr: 0.00010883749928325415, Loss: 1.378127
+Epoch: [4/300] Iter:[60/148], Time: 0.3359, lr: 0.00011052499758079648, Loss: 1.646150
+Epoch: [4/300] Iter:[70/148], Time: 0.3349, lr: 0.00011221252498216927, Loss: 1.637172
+Epoch: [4/300] Iter:[80/148], Time: 0.3340, lr: 0.0001139000232797116, Loss: 1.513144
+Epoch: [4/300] Iter:[90/148], Time: 0.3334, lr: 0.00011558749247342348, Loss: 1.699985
+Epoch: [4/300] Iter:[100/148], Time: 0.3328, lr: 0.00011727501987479627, Loss: 1.621101
+Epoch: [4/300] Iter:[110/148], Time: 0.3325, lr: 0.0001189625181723386, Loss: 1.443222
+Epoch: [4/300] Iter:[120/148], Time: 0.3320, lr: 0.00012065001646988094, Loss: 1.636593
+Epoch: [4/300] Iter:[130/148], Time: 0.3317, lr: 0.00012233748566359282, Loss: 1.593618
+Epoch: [4/300] Iter:[140/148], Time: 0.3315, lr: 0.0001240250130649656, Loss: 1.507123
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 5
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best5
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best4
+Saving checkpoint at step: 5
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint5
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint4
+Loss: 1.558, Mean Accuracy:  0.4695, Best Accuracy:  0.4695
+Epoch: [5/300] Iter:[0/148], Time: 0.9095, lr: 0.0001253749942407012, Loss: 1.600535
+Epoch: [5/300] Iter:[10/148], Time: 0.3816, lr: 0.000127062521642074, Loss: 1.255196
+Epoch: [5/300] Iter:[20/148], Time: 0.3561, lr: 0.00012875001993961632, Loss: 1.513427
+Epoch: [5/300] Iter:[30/148], Time: 0.3470, lr: 0.00013043751823715866, Loss: 1.481328
+Epoch: [5/300] Iter:[40/148], Time: 0.3424, lr: 0.000132125016534701, Loss: 1.427436
+Epoch: [5/300] Iter:[50/148], Time: 0.3396, lr: 0.00013381251483224332, Loss: 1.327951
+Epoch: [5/300] Iter:[60/148], Time: 0.3376, lr: 0.00013550001312978566, Loss: 1.629781
+Epoch: [5/300] Iter:[70/148], Time: 0.3364, lr: 0.00013718748232349753, Loss: 1.631471
+Epoch: [5/300] Iter:[80/148], Time: 0.3353, lr: 0.00013887500972487032, Loss: 1.603673
+Epoch: [5/300] Iter:[90/148], Time: 0.3344, lr: 0.00014056250802241266, Loss: 1.477848
+Epoch: [5/300] Iter:[100/148], Time: 0.3339, lr: 0.000142250006319955, Loss: 1.256970
+Epoch: [5/300] Iter:[110/148], Time: 0.3334, lr: 0.00014393753372132778, Loss: 1.346396
+Epoch: [5/300] Iter:[120/148], Time: 0.3329, lr: 0.00014562503201887012, Loss: 1.316048
+Epoch: [5/300] Iter:[130/148], Time: 0.3326, lr: 0.00014731253031641245, Loss: 1.332174
+Epoch: [5/300] Iter:[140/148], Time: 0.3324, lr: 0.00014899999951012433, Loss: 1.379498
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 6
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best6
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best5
+Saving checkpoint at step: 6
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint6
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint5
+Loss: 1.418, Mean Accuracy:  0.5266, Best Accuracy:  0.5266
+Epoch: [6/300] Iter:[0/148], Time: 1.0043, lr: 0.00015035000978969038, Loss: 1.398255
+Epoch: [6/300] Iter:[10/148], Time: 0.3891, lr: 0.00015203747898340225, Loss: 1.563173
+Epoch: [6/300] Iter:[20/148], Time: 0.3599, lr: 0.00015372500638477504, Loss: 1.465571
+Epoch: [6/300] Iter:[30/148], Time: 0.3498, lr: 0.00015541250468231738, Loss: 1.441956
+Epoch: [6/300] Iter:[40/148], Time: 0.3445, lr: 0.0001571000029798597, Loss: 1.231926
+Epoch: [6/300] Iter:[50/148], Time: 0.3412, lr: 0.0001587875303812325, Loss: 1.375659
+Epoch: [6/300] Iter:[60/148], Time: 0.3390, lr: 0.00016047502867877483, Loss: 1.735401
+Epoch: [6/300] Iter:[70/148], Time: 0.3375, lr: 0.00016216252697631717, Loss: 1.359474
+Epoch: [6/300] Iter:[80/148], Time: 0.3363, lr: 0.00016384999617002904, Loss: 1.442793
+Epoch: [6/300] Iter:[90/148], Time: 0.3355, lr: 0.00016553752357140183, Loss: 1.017515
+Epoch: [6/300] Iter:[100/148], Time: 0.3348, lr: 0.00016722502186894417, Loss: 1.193068
+Epoch: [6/300] Iter:[110/148], Time: 0.3342, lr: 0.00016891249106265604, Loss: 1.126089
+Epoch: [6/300] Iter:[120/148], Time: 0.3337, lr: 0.00017060001846402884, Loss: 1.252216
+Epoch: [6/300] Iter:[130/148], Time: 0.3334, lr: 0.00017228751676157117, Loss: 1.246395
+Epoch: [6/300] Iter:[140/148], Time: 0.3330, lr: 0.0001739750150591135, Loss: 1.158782
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 7
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best7
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best6
+Saving checkpoint at step: 7
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint7
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint6
+Loss: 1.299, Mean Accuracy:  0.5647, Best Accuracy:  0.5647
+Epoch: [7/300] Iter:[0/148], Time: 0.8003, lr: 0.00017532502533867955, Loss: 1.226731
+Epoch: [7/300] Iter:[10/148], Time: 0.3709, lr: 0.00017701252363622189, Loss: 1.068097
+Epoch: [7/300] Iter:[20/148], Time: 0.3504, lr: 0.00017870002193376422, Loss: 1.279922
+Epoch: [7/300] Iter:[30/148], Time: 0.3431, lr: 0.00018038752023130655, Loss: 1.120726
+Epoch: [7/300] Iter:[40/148], Time: 0.3396, lr: 0.0001820750185288489, Loss: 1.020056
+Epoch: [7/300] Iter:[50/148], Time: 0.3374, lr: 0.00018376248772256076, Loss: 1.441888
+Epoch: [7/300] Iter:[60/148], Time: 0.3357, lr: 0.00018545001512393355, Loss: 1.283051
+Epoch: [7/300] Iter:[70/148], Time: 0.3347, lr: 0.0001871375134214759, Loss: 1.052062
+Epoch: [7/300] Iter:[80/148], Time: 0.3338, lr: 0.00018882501171901822, Loss: 1.261584
+Epoch: [7/300] Iter:[90/148], Time: 0.3333, lr: 0.00019051251001656055, Loss: 1.205333
+Epoch: [7/300] Iter:[100/148], Time: 0.3327, lr: 0.00019220003741793334, Loss: 1.275698
+Epoch: [7/300] Iter:[110/148], Time: 0.3324, lr: 0.00019388753571547568, Loss: 0.906265
+Epoch: [7/300] Iter:[120/148], Time: 0.3320, lr: 0.00019557500490918756, Loss: 1.047590
+Epoch: [7/300] Iter:[130/148], Time: 0.3317, lr: 0.00019726253231056035, Loss: 1.324139
+Epoch: [7/300] Iter:[140/148], Time: 0.3314, lr: 0.00019895000150427222, Loss: 1.201825
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 8
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best8
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best7
+Saving checkpoint at step: 8
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint8
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint7
+Loss: 1.222, Mean Accuracy:  0.5937, Best Accuracy:  0.5937
+Epoch: [8/300] Iter:[0/148], Time: 1.0352, lr: 0.00020030001178383827, Loss: 1.306747
+Epoch: [8/300] Iter:[10/148], Time: 0.3931, lr: 0.0002019875100813806, Loss: 1.349236
+Epoch: [8/300] Iter:[20/148], Time: 0.3620, lr: 0.00020367500837892294, Loss: 1.191695
+Epoch: [8/300] Iter:[30/148], Time: 0.3513, lr: 0.00020536250667646527, Loss: 0.998950
+Epoch: [8/300] Iter:[40/148], Time: 0.3455, lr: 0.00020705003407783806, Loss: 1.313182
+Epoch: [8/300] Iter:[50/148], Time: 0.3420, lr: 0.0002087375323753804, Loss: 1.454305
+Epoch: [8/300] Iter:[60/148], Time: 0.3399, lr: 0.00021042503067292273, Loss: 1.468324
+Epoch: [8/300] Iter:[70/148], Time: 0.3382, lr: 0.00021211252897046506, Loss: 1.047869
+Epoch: [8/300] Iter:[80/148], Time: 0.3370, lr: 0.0002138000272680074, Loss: 1.086236
+Epoch: [8/300] Iter:[90/148], Time: 0.3359, lr: 0.00021548749646171927, Loss: 1.086690
+Epoch: [8/300] Iter:[100/148], Time: 0.3352, lr: 0.0002171749947592616, Loss: 1.002366
+Epoch: [8/300] Iter:[110/148], Time: 0.3345, lr: 0.0002188625221606344, Loss: 1.067579
+Epoch: [8/300] Iter:[120/148], Time: 0.3340, lr: 0.00022055002045817673, Loss: 0.890872
+Epoch: [8/300] Iter:[130/148], Time: 0.3335, lr: 0.00022223751875571907, Loss: 0.791998
+Epoch: [8/300] Iter:[140/148], Time: 0.3332, lr: 0.0002239250170532614, Loss: 1.187563
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 9
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best9
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best8
+Saving checkpoint at step: 9
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint9
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint8
+Loss: 1.028, Mean Accuracy:  0.6600, Best Accuracy:  0.6600
+Epoch: [9/300] Iter:[0/148], Time: 0.8385, lr: 0.00022527502733282745, Loss: 1.124363
+Epoch: [9/300] Iter:[10/148], Time: 0.3751, lr: 0.00022696252563036978, Loss: 1.233714
+Epoch: [9/300] Iter:[20/148], Time: 0.3523, lr: 0.00022865002392791212, Loss: 1.014318
+Epoch: [9/300] Iter:[30/148], Time: 0.3443, lr: 0.000230337493121624, Loss: 1.202452
+Epoch: [9/300] Iter:[40/148], Time: 0.3403, lr: 0.00023202499141916633, Loss: 1.010504
+Epoch: [9/300] Iter:[50/148], Time: 0.3379, lr: 0.00023371251882053912, Loss: 1.474289
+Epoch: [9/300] Iter:[60/148], Time: 0.3362, lr: 0.00023540001711808145, Loss: 1.227024
+Epoch: [9/300] Iter:[70/148], Time: 0.3350, lr: 0.00023708751541562378, Loss: 0.901659
+Epoch: [9/300] Iter:[80/148], Time: 0.3341, lr: 0.00023877504281699657, Loss: 1.043614
+Epoch: [9/300] Iter:[90/148], Time: 0.3334, lr: 0.0002404625411145389, Loss: 1.057875
+Epoch: [9/300] Iter:[100/148], Time: 0.3329, lr: 0.00024215001030825078, Loss: 1.010299
+Epoch: [9/300] Iter:[110/148], Time: 0.3325, lr: 0.00024383750860579312, Loss: 0.933396
+Epoch: [9/300] Iter:[120/148], Time: 0.3321, lr: 0.0002455250360071659, Loss: 1.003505
+Epoch: [9/300] Iter:[130/148], Time: 0.3318, lr: 0.0002472125052008778, Loss: 0.845939
+Epoch: [9/300] Iter:[140/148], Time: 0.3315, lr: 0.0002489000034984201, Loss: 0.954797
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 10
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best10
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best9
+Saving checkpoint at step: 10
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint10
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint9
+Loss: 0.998, Mean Accuracy:  0.6698, Best Accuracy:  0.6698
+Epoch: [10/300] Iter:[0/148], Time: 0.8252, lr: 0.00025025001377798617, Loss: 1.032485
+Epoch: [10/300] Iter:[10/148], Time: 0.3735, lr: 0.0002519375120755285, Loss: 1.006136
+Epoch: [10/300] Iter:[20/148], Time: 0.3516, lr: 0.0002536250394769013, Loss: 1.045677
+Epoch: [10/300] Iter:[30/148], Time: 0.3437, lr: 0.0002553125377744436, Loss: 0.790194
+Epoch: [10/300] Iter:[40/148], Time: 0.3399, lr: 0.0002570000069681555, Loss: 0.774453
+Epoch: [10/300] Iter:[50/148], Time: 0.3376, lr: 0.0002586875343695283, Loss: 0.961411
+Epoch: [10/300] Iter:[60/148], Time: 0.3360, lr: 0.00026037503266707063, Loss: 0.937262
+Epoch: [10/300] Iter:[70/148], Time: 0.3349, lr: 0.00026206253096461296, Loss: 1.132070
+Epoch: [10/300] Iter:[80/148], Time: 0.3340, lr: 0.00026375000015832484, Loss: 0.767470
+Epoch: [10/300] Iter:[90/148], Time: 0.3335, lr: 0.00026543752755969763, Loss: 0.876137
+Epoch: [10/300] Iter:[100/148], Time: 0.3330, lr: 0.00026712502585723996, Loss: 0.772133
+Epoch: [10/300] Iter:[110/148], Time: 0.3325, lr: 0.0002688125241547823, Loss: 0.795671
+Epoch: [10/300] Iter:[120/148], Time: 0.3321, lr: 0.00027050002245232463, Loss: 0.763290
+Epoch: [10/300] Iter:[130/148], Time: 0.3319, lr: 0.00027218752074986696, Loss: 1.002629
+Epoch: [10/300] Iter:[140/148], Time: 0.3316, lr: 0.0002738750190474093, Loss: 0.924801
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 11
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best11
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best10
+Saving checkpoint at step: 11
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint11
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint10
+Loss: 0.944, Mean Accuracy:  0.6942, Best Accuracy:  0.6942
+Epoch: [11/300] Iter:[0/148], Time: 0.8467, lr: 0.00027522502932697535, Loss: 0.868910
+Epoch: [11/300] Iter:[10/148], Time: 0.3751, lr: 0.0002769125276245177, Loss: 0.682186
+Epoch: [11/300] Iter:[20/148], Time: 0.3525, lr: 0.00027860002592206, Loss: 0.706818
+Epoch: [11/300] Iter:[30/148], Time: 0.3446, lr: 0.00028028752421960235, Loss: 0.953049
+Epoch: [11/300] Iter:[40/148], Time: 0.3404, lr: 0.0002819750225171447, Loss: 0.910686
+Epoch: [11/300] Iter:[50/148], Time: 0.3380, lr: 0.000283662520814687, Loss: 0.779089
+Epoch: [11/300] Iter:[60/148], Time: 0.3362, lr: 0.00028535001911222935, Loss: 1.093941
+Epoch: [11/300] Iter:[70/148], Time: 0.3350, lr: 0.0002870375174097717, Loss: 0.997406
+Epoch: [11/300] Iter:[80/148], Time: 0.3340, lr: 0.000288725015707314, Loss: 0.828446
+Epoch: [11/300] Iter:[90/148], Time: 0.3334, lr: 0.00029041251400485635, Loss: 0.824470
+Epoch: [11/300] Iter:[100/148], Time: 0.3328, lr: 0.0002921000123023987, Loss: 0.827387
+Epoch: [11/300] Iter:[110/148], Time: 0.3324, lr: 0.00029378753970377147, Loss: 0.792519
+Epoch: [11/300] Iter:[120/148], Time: 0.3320, lr: 0.00029547500889748335, Loss: 0.721327
+Epoch: [11/300] Iter:[130/148], Time: 0.3316, lr: 0.0002971625071950257, Loss: 1.028627
+Epoch: [11/300] Iter:[140/148], Time: 0.3314, lr: 0.000298850005492568, Loss: 1.015579
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 12
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint12
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint11
+Loss: 0.976, Mean Accuracy:  0.6814, Best Accuracy:  0.6942
+Epoch: [12/300] Iter:[0/148], Time: 0.8533, lr: 0.00030020001577213407, Loss: 0.763071
+Epoch: [12/300] Iter:[10/148], Time: 0.3754, lr: 0.0003018875140696764, Loss: 0.666406
+Epoch: [12/300] Iter:[20/148], Time: 0.3527, lr: 0.00030357501236721873, Loss: 0.750723
+Epoch: [12/300] Iter:[30/148], Time: 0.3452, lr: 0.00030526251066476107, Loss: 0.708584
+Epoch: [12/300] Iter:[40/148], Time: 0.3409, lr: 0.0003069500089623034, Loss: 0.875885
+Epoch: [12/300] Iter:[50/148], Time: 0.3385, lr: 0.0003086375363636762, Loss: 0.914539
+Epoch: [12/300] Iter:[60/148], Time: 0.3367, lr: 0.0003103250346612185, Loss: 0.802518
+Epoch: [12/300] Iter:[70/148], Time: 0.3356, lr: 0.0003120125038549304, Loss: 0.922936
+Epoch: [12/300] Iter:[80/148], Time: 0.3345, lr: 0.00031370000215247273, Loss: 0.851862
+Epoch: [12/300] Iter:[90/148], Time: 0.3339, lr: 0.0003153875295538455, Loss: 1.120370
+Epoch: [12/300] Iter:[100/148], Time: 0.3332, lr: 0.00031707502785138786, Loss: 0.808201
+Epoch: [12/300] Iter:[110/148], Time: 0.3328, lr: 0.00031876249704509974, Loss: 1.026300
+Epoch: [12/300] Iter:[120/148], Time: 0.3323, lr: 0.00032044999534264207, Loss: 0.690482
+Epoch: [12/300] Iter:[130/148], Time: 0.3320, lr: 0.00032213752274401486, Loss: 0.847519
+Epoch: [12/300] Iter:[140/148], Time: 0.3318, lr: 0.00032382505014538765, Loss: 0.808137
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 13
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best13
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best11
+Saving checkpoint at step: 13
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint13
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint12
+Loss: 0.903, Mean Accuracy:  0.7063, Best Accuracy:  0.7063
+Epoch: [13/300] Iter:[0/148], Time: 1.1612, lr: 0.00032517503132112324, Loss: 0.873696
+Epoch: [13/300] Iter:[10/148], Time: 0.4036, lr: 0.0003268625005148351, Loss: 0.617930
+Epoch: [13/300] Iter:[20/148], Time: 0.3678, lr: 0.00032854999881237745, Loss: 0.875186
+Epoch: [13/300] Iter:[30/148], Time: 0.3547, lr: 0.00033023752621375024, Loss: 0.959473
+Epoch: [13/300] Iter:[40/148], Time: 0.3481, lr: 0.0003319250245112926, Loss: 0.817099
+Epoch: [13/300] Iter:[50/148], Time: 0.3442, lr: 0.00033361255191266537, Loss: 1.054434
+Epoch: [13/300] Iter:[60/148], Time: 0.3416, lr: 0.00033530002110637724, Loss: 0.676246
+Epoch: [13/300] Iter:[70/148], Time: 0.3397, lr: 0.0003369875194039196, Loss: 0.861406
+Epoch: [13/300] Iter:[80/148], Time: 0.3384, lr: 0.00033867504680529237, Loss: 0.729604
+Epoch: [13/300] Iter:[90/148], Time: 0.3373, lr: 0.0003403625451028347, Loss: 0.949609
+Epoch: [13/300] Iter:[100/148], Time: 0.3363, lr: 0.00034205004340037704, Loss: 0.490323
+Epoch: [13/300] Iter:[110/148], Time: 0.3356, lr: 0.0003437375125940889, Loss: 0.637999
+Epoch: [13/300] Iter:[120/148], Time: 0.3350, lr: 0.0003454250399954617, Loss: 0.481994
+Epoch: [13/300] Iter:[130/148], Time: 0.3345, lr: 0.00034711253829300404, Loss: 0.696526
+Epoch: [13/300] Iter:[140/148], Time: 0.3341, lr: 0.00034880003659054637, Loss: 0.865691
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 14
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best14
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best13
+Saving checkpoint at step: 14
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint14
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint13
+Loss: 0.855, Mean Accuracy:  0.7205, Best Accuracy:  0.7205
+Epoch: [14/300] Iter:[0/148], Time: 0.8156, lr: 0.00035015001776628196, Loss: 0.755684
+Epoch: [14/300] Iter:[10/148], Time: 0.3719, lr: 0.0003518375160638243, Loss: 0.617549
+Epoch: [14/300] Iter:[20/148], Time: 0.3512, lr: 0.0003535250434651971, Loss: 0.655666
+Epoch: [14/300] Iter:[30/148], Time: 0.3434, lr: 0.0003552125417627394, Loss: 0.710065
+Epoch: [14/300] Iter:[40/148], Time: 0.3396, lr: 0.00035690004006028175, Loss: 0.736028
+Epoch: [14/300] Iter:[50/148], Time: 0.3372, lr: 0.00035858750925399363, Loss: 0.969269
+Epoch: [14/300] Iter:[60/148], Time: 0.3357, lr: 0.0003602750366553664, Loss: 0.885744
+Epoch: [14/300] Iter:[70/148], Time: 0.3345, lr: 0.00036196253495290875, Loss: 0.862456
+Epoch: [14/300] Iter:[80/148], Time: 0.3338, lr: 0.0003636500332504511, Loss: 0.665990
+Epoch: [14/300] Iter:[90/148], Time: 0.3331, lr: 0.0003653375315479934, Loss: 0.727261
+Epoch: [14/300] Iter:[100/148], Time: 0.3326, lr: 0.00036702502984553576, Loss: 0.612240
+Epoch: [14/300] Iter:[110/148], Time: 0.3321, lr: 0.0003687125281430781, Loss: 0.541297
+Epoch: [14/300] Iter:[120/148], Time: 0.3318, lr: 0.0003704000264406204, Loss: 0.794474
+Epoch: [14/300] Iter:[130/148], Time: 0.3315, lr: 0.00037208752473816276, Loss: 0.878311
+Epoch: [14/300] Iter:[140/148], Time: 0.3313, lr: 0.0003737750230357051, Loss: 0.821550
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 15
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint15
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint14
+Loss: 0.871, Mean Accuracy:  0.7162, Best Accuracy:  0.7205
+Epoch: [15/300] Iter:[0/148], Time: 1.2254, lr: 0.00037512503331527114, Loss: 0.739174
+Epoch: [15/300] Iter:[10/148], Time: 0.4092, lr: 0.00037681253161281347, Loss: 0.746082
+Epoch: [15/300] Iter:[20/148], Time: 0.3703, lr: 0.0003785000299103558, Loss: 0.618932
+Epoch: [15/300] Iter:[30/148], Time: 0.3569, lr: 0.00038018752820789814, Loss: 1.061162
+Epoch: [15/300] Iter:[40/148], Time: 0.3497, lr: 0.0003818750265054405, Loss: 0.557014
+Epoch: [15/300] Iter:[50/148], Time: 0.3456, lr: 0.0003835625248029828, Loss: 0.758648
+Epoch: [15/300] Iter:[60/148], Time: 0.3427, lr: 0.00038525002310052514, Loss: 0.712244
+Epoch: [15/300] Iter:[70/148], Time: 0.3405, lr: 0.0003869375213980675, Loss: 0.431078
+Epoch: [15/300] Iter:[80/148], Time: 0.3389, lr: 0.00038862504879944026, Loss: 0.737907
+Epoch: [15/300] Iter:[90/148], Time: 0.3378, lr: 0.00039031251799315214, Loss: 0.732051
+Epoch: [15/300] Iter:[100/148], Time: 0.3369, lr: 0.0003920000162906945, Loss: 0.852663
+Epoch: [15/300] Iter:[110/148], Time: 0.3361, lr: 0.0003936875145882368, Loss: 0.552941
+Epoch: [15/300] Iter:[120/148], Time: 0.3355, lr: 0.0003953750419896096, Loss: 0.512588
+Epoch: [15/300] Iter:[130/148], Time: 0.3349, lr: 0.00039706254028715193, Loss: 0.764310
+Epoch: [15/300] Iter:[140/148], Time: 0.3345, lr: 0.0003987500094808638, Loss: 0.648965
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 16
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint16
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint15
+Loss: 0.868, Mean Accuracy:  0.7204, Best Accuracy:  0.7205
+Epoch: [16/300] Iter:[0/148], Time: 0.8317, lr: 0.00040010001976042986, Loss: 0.748400
+Epoch: [16/300] Iter:[10/148], Time: 0.3733, lr: 0.0004017875180579722, Loss: 0.689840
+Epoch: [16/300] Iter:[20/148], Time: 0.3516, lr: 0.000403475045459345, Loss: 0.492301
+Epoch: [16/300] Iter:[30/148], Time: 0.3441, lr: 0.00040516251465305686, Loss: 0.769795
+Epoch: [16/300] Iter:[40/148], Time: 0.3402, lr: 0.0004068500129505992, Loss: 0.649821
+Epoch: [16/300] Iter:[50/148], Time: 0.3377, lr: 0.00040853751124814153, Loss: 0.479847
+Epoch: [16/300] Iter:[60/148], Time: 0.3362, lr: 0.0004102250386495143, Loss: 0.507489
+Epoch: [16/300] Iter:[70/148], Time: 0.3350, lr: 0.00041191253694705665, Loss: 0.724045
+Epoch: [16/300] Iter:[80/148], Time: 0.3342, lr: 0.00041360000614076853, Loss: 0.722633
+Epoch: [16/300] Iter:[90/148], Time: 0.3334, lr: 0.0004152875335421413, Loss: 0.597991
+Epoch: [16/300] Iter:[100/148], Time: 0.3330, lr: 0.00041697503183968365, Loss: 0.633295
+Epoch: [16/300] Iter:[110/148], Time: 0.3325, lr: 0.000418662530137226, Loss: 0.877775
+Epoch: [16/300] Iter:[120/148], Time: 0.3322, lr: 0.0004203500575385988, Loss: 0.364441
+Epoch: [16/300] Iter:[130/148], Time: 0.3319, lr: 0.00042203752673231065, Loss: 0.575376
+Epoch: [16/300] Iter:[140/148], Time: 0.3316, lr: 0.000423725025029853, Loss: 0.564528
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 17
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best17
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best14
+Saving checkpoint at step: 17
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint17
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint16
+Loss: 0.826, Mean Accuracy:  0.7351, Best Accuracy:  0.7351
+Epoch: [17/300] Iter:[0/148], Time: 1.0363, lr: 0.00042507503530941904, Loss: 0.693612
+Epoch: [17/300] Iter:[10/148], Time: 0.3917, lr: 0.00042676253360696137, Loss: 0.812366
+Epoch: [17/300] Iter:[20/148], Time: 0.3614, lr: 0.00042845006100833416, Loss: 0.654385
+Epoch: [17/300] Iter:[30/148], Time: 0.3509, lr: 0.00043013753020204604, Loss: 0.591206
+Epoch: [17/300] Iter:[40/148], Time: 0.3452, lr: 0.00043182502849958837, Loss: 0.609706
+Epoch: [17/300] Iter:[50/148], Time: 0.3420, lr: 0.0004335125267971307, Loss: 0.656431
+Epoch: [17/300] Iter:[60/148], Time: 0.3396, lr: 0.0004352000541985035, Loss: 0.675976
+Epoch: [17/300] Iter:[70/148], Time: 0.3380, lr: 0.00043688752339221537, Loss: 0.744349
+Epoch: [17/300] Iter:[80/148], Time: 0.3367, lr: 0.0004385750216897577, Loss: 0.438944
+Epoch: [17/300] Iter:[90/148], Time: 0.3359, lr: 0.00044026251998730004, Loss: 0.507355
+Epoch: [17/300] Iter:[100/148], Time: 0.3350, lr: 0.00044195004738867283, Loss: 0.697068
+Epoch: [17/300] Iter:[110/148], Time: 0.3344, lr: 0.00044363754568621516, Loss: 0.411315
+Epoch: [17/300] Iter:[120/148], Time: 0.3339, lr: 0.00044532501487992704, Loss: 0.672440
+Epoch: [17/300] Iter:[130/148], Time: 0.3334, lr: 0.00044701254228129983, Loss: 0.586066
+Epoch: [17/300] Iter:[140/148], Time: 0.3330, lr: 0.00044870004057884216, Loss: 0.545340
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 18
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint18
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint17
+Loss: 0.827, Mean Accuracy:  0.7343, Best Accuracy:  0.7351
+Epoch: [18/300] Iter:[0/148], Time: 0.9113, lr: 0.0004500500508584082, Loss: 0.622887
+Epoch: [18/300] Iter:[10/148], Time: 0.3809, lr: 0.00045173754915595055, Loss: 0.728766
+Epoch: [18/300] Iter:[20/148], Time: 0.3564, lr: 0.0004534250183496624, Loss: 0.541528
+Epoch: [18/300] Iter:[30/148], Time: 0.3472, lr: 0.00045511251664720476, Loss: 0.394743
+Epoch: [18/300] Iter:[40/148], Time: 0.3426, lr: 0.00045680004404857755, Loss: 0.974153
+Epoch: [18/300] Iter:[50/148], Time: 0.3398, lr: 0.0004584875423461199, Loss: 0.529135
+Epoch: [18/300] Iter:[60/148], Time: 0.3378, lr: 0.00046017501153983176, Loss: 0.739388
+Epoch: [18/300] Iter:[70/148], Time: 0.3364, lr: 0.00046186253894120455, Loss: 0.752780
+Epoch: [18/300] Iter:[80/148], Time: 0.3353, lr: 0.0004635500372387469, Loss: 0.645669
+Epoch: [18/300] Iter:[90/148], Time: 0.3345, lr: 0.0004652375355362892, Loss: 0.522300
+Epoch: [18/300] Iter:[100/148], Time: 0.3339, lr: 0.00046692503383383155, Loss: 0.735007
+Epoch: [18/300] Iter:[110/148], Time: 0.3334, lr: 0.0004686125321313739, Loss: 0.746188
+Epoch: [18/300] Iter:[120/148], Time: 0.3329, lr: 0.0004703000304289162, Loss: 0.327489
+Epoch: [18/300] Iter:[130/148], Time: 0.3326, lr: 0.00047198752872645855, Loss: 0.650782
+Epoch: [18/300] Iter:[140/148], Time: 0.3323, lr: 0.0004736750270240009, Loss: 0.568504
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 19
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best19
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best17
+Saving checkpoint at step: 19
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint19
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint18
+Loss: 0.780, Mean Accuracy:  0.7499, Best Accuracy:  0.7499
+Epoch: [19/300] Iter:[0/148], Time: 0.8943, lr: 0.00047502503730356693, Loss: 0.648738
+Epoch: [19/300] Iter:[10/148], Time: 0.3800, lr: 0.00047671253560110927, Loss: 0.713920
+Epoch: [19/300] Iter:[20/148], Time: 0.3553, lr: 0.0004784000338986516, Loss: 0.585472
+Epoch: [19/300] Iter:[30/148], Time: 0.3465, lr: 0.00048008753219619393, Loss: 0.720284
+Epoch: [19/300] Iter:[40/148], Time: 0.3423, lr: 0.00048177503049373627, Loss: 0.759812
+Epoch: [19/300] Iter:[50/148], Time: 0.3394, lr: 0.00048346255789510906, Loss: 0.476797
+Epoch: [19/300] Iter:[60/148], Time: 0.3375, lr: 0.00048515002708882093, Loss: 0.473350
+Epoch: [19/300] Iter:[70/148], Time: 0.3362, lr: 0.00048683752538636327, Loss: 0.443941
+Epoch: [19/300] Iter:[80/148], Time: 0.3351, lr: 0.0004885250236839056, Loss: 0.678763
+Epoch: [19/300] Iter:[90/148], Time: 0.3342, lr: 0.0004902125219814479, Loss: 0.616361
+Epoch: [19/300] Iter:[100/148], Time: 0.3336, lr: 0.0004919000202789903, Loss: 0.402513
+Epoch: [19/300] Iter:[110/148], Time: 0.3330, lr: 0.0004935875185765326, Loss: 0.516814
+Epoch: [19/300] Iter:[120/148], Time: 0.3326, lr: 0.0004952750168740749, Loss: 0.337918
+Epoch: [19/300] Iter:[130/148], Time: 0.3322, lr: 0.0004969625151716173, Loss: 0.386888
+Epoch: [19/300] Iter:[140/148], Time: 0.3320, lr: 0.0004986500716768205, Loss: 0.517897
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 20
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best20
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best19
+Saving checkpoint at step: 20
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint20
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint19
+Loss: 0.769, Mean Accuracy:  0.7580, Best Accuracy:  0.7580
+Epoch: [20/300] Iter:[0/148], Time: 0.8577, lr: 0.0005000000237487257, Loss: 0.622994
+Epoch: [20/300] Iter:[10/148], Time: 0.3765, lr: 0.0004999999655410647, Loss: 0.746548
+Epoch: [20/300] Iter:[20/148], Time: 0.3531, lr: 0.0004999997327104211, Loss: 0.715015
+Epoch: [20/300] Iter:[30/148], Time: 0.3449, lr: 0.0004999993834644556, Loss: 0.483078
+Epoch: [20/300] Iter:[40/148], Time: 0.3406, lr: 0.0004999989178031683, Loss: 0.568407
+Epoch: [20/300] Iter:[50/148], Time: 0.3382, lr: 0.0004999982775188982, Loss: 0.529589
+Epoch: [20/300] Iter:[60/148], Time: 0.3364, lr: 0.0004999974626116455, Loss: 0.429014
+Epoch: [20/300] Iter:[70/148], Time: 0.3352, lr: 0.0004999965312890708, Loss: 0.649706
+Epoch: [20/300] Iter:[80/148], Time: 0.3342, lr: 0.0004999954835511744, Loss: 0.523177
+Epoch: [20/300] Iter:[90/148], Time: 0.3335, lr: 0.0004999942611902952, Loss: 0.597443
+Epoch: [20/300] Iter:[100/148], Time: 0.3329, lr: 0.0004999929224140942, Loss: 0.577648
+Epoch: [20/300] Iter:[110/148], Time: 0.3325, lr: 0.0004999914090149105, Loss: 0.531532
+Epoch: [20/300] Iter:[120/148], Time: 0.3322, lr: 0.0004999897792004049, Loss: 0.545556
+Epoch: [20/300] Iter:[130/148], Time: 0.3319, lr: 0.0004999879747629166, Loss: 0.509640
+Epoch: [20/300] Iter:[140/148], Time: 0.3315, lr: 0.0004999861121177673, Loss: 0.510415
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 21
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint21
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint20
+Loss: 0.791, Mean Accuracy:  0.7449, Best Accuracy:  0.7580
+Epoch: [21/300] Iter:[0/148], Time: 0.8381, lr: 0.0004999844240956008, Loss: 0.529432
+Epoch: [21/300] Iter:[10/148], Time: 0.3730, lr: 0.000499982270412147, Loss: 0.427806
+Epoch: [21/300] Iter:[20/148], Time: 0.3515, lr: 0.0004999799421057105, Loss: 0.441153
+Epoch: [21/300] Iter:[30/148], Time: 0.3436, lr: 0.0004999774973839521, Loss: 0.431520
+Epoch: [21/300] Iter:[40/148], Time: 0.3398, lr: 0.000499974878039211, Loss: 0.517032
+Epoch: [21/300] Iter:[50/148], Time: 0.3375, lr: 0.0004999721422791481, Loss: 0.657111
+Epoch: [21/300] Iter:[60/148], Time: 0.3359, lr: 0.0004999692318961024, Loss: 0.624128
+Epoch: [21/300] Iter:[70/148], Time: 0.3347, lr: 0.0004999662050977349, Loss: 0.629744
+Epoch: [21/300] Iter:[80/148], Time: 0.3341, lr: 0.0004999630618840456, Loss: 0.526517
+Epoch: [21/300] Iter:[90/148], Time: 0.3334, lr: 0.0004999597440473735, Loss: 0.724205
+Epoch: [21/300] Iter:[100/148], Time: 0.3328, lr: 0.0004999563097953796, Loss: 0.522488
+Epoch: [21/300] Iter:[110/148], Time: 0.3324, lr: 0.000499952700920403, Loss: 0.304325
+Epoch: [21/300] Iter:[120/148], Time: 0.3320, lr: 0.0004999489174224436, Loss: 0.351145
+Epoch: [21/300] Iter:[130/148], Time: 0.3317, lr: 0.0004999450757168233, Loss: 0.527050
+Epoch: [21/300] Iter:[140/148], Time: 0.3315, lr: 0.0004999410011805594, Loss: 0.467944
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 22
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint22
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint21
+Loss: 0.788, Mean Accuracy:  0.7517, Best Accuracy:  0.7580
+Epoch: [22/300] Iter:[0/148], Time: 1.1611, lr: 0.0004999376833438873, Loss: 0.687604
+Epoch: [22/300] Iter:[10/148], Time: 0.4032, lr: 0.0004999334341846406, Loss: 0.412556
+Epoch: [22/300] Iter:[20/148], Time: 0.3674, lr: 0.0004999290104024112, Loss: 0.532756
+Epoch: [22/300] Iter:[30/148], Time: 0.3544, lr: 0.00049992447020486, Loss: 0.303389
+Epoch: [22/300] Iter:[40/148], Time: 0.3479, lr: 0.0004999196971766651, Loss: 0.606494
+Epoch: [22/300] Iter:[50/148], Time: 0.3439, lr: 0.0004999148659408092, Loss: 0.535421
+Epoch: [22/300] Iter:[60/148], Time: 0.3413, lr: 0.0004999099182896316, Loss: 0.441089
+Epoch: [22/300] Iter:[70/148], Time: 0.3393, lr: 0.0004999047378078103, Loss: 0.435825
+Epoch: [22/300] Iter:[80/148], Time: 0.3380, lr: 0.0004998994991183281, Loss: 0.457754
+Epoch: [22/300] Iter:[90/148], Time: 0.3369, lr: 0.0004998940275982022, Loss: 0.583898
+Epoch: [22/300] Iter:[100/148], Time: 0.3361, lr: 0.0004998884978704154, Loss: 0.572077
+Epoch: [22/300] Iter:[110/148], Time: 0.3353, lr: 0.0004998827935196459, Loss: 0.386077
+Epoch: [22/300] Iter:[120/148], Time: 0.3347, lr: 0.0004998769145458937, Loss: 0.427113
+Epoch: [22/300] Iter:[130/148], Time: 0.3342, lr: 0.0004998709773644805, Loss: 0.432674
+Epoch: [22/300] Iter:[140/148], Time: 0.3337, lr: 0.0004998648655600846, Loss: 0.640320
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 23
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best23
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best20
+Saving checkpoint at step: 23
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint23
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint22
+Loss: 0.715, Mean Accuracy:  0.7747, Best Accuracy:  0.7747
+Epoch: [23/300] Iter:[0/148], Time: 0.7955, lr: 0.000499859859701246, Loss: 0.440683
+Epoch: [23/300] Iter:[10/148], Time: 0.3705, lr: 0.0004998534568585455, Loss: 0.474613
+Epoch: [23/300] Iter:[20/148], Time: 0.3503, lr: 0.0004998468793928623, Loss: 0.695144
+Epoch: [23/300] Iter:[30/148], Time: 0.3434, lr: 0.0004998402437195182, Loss: 0.553170
+Epoch: [23/300] Iter:[40/148], Time: 0.3395, lr: 0.0004998334334231913, Loss: 0.665158
+Epoch: [23/300] Iter:[50/148], Time: 0.3371, lr: 0.0004998265067115426, Loss: 0.492387
+Epoch: [23/300] Iter:[60/148], Time: 0.3355, lr: 0.0004998194053769112, Loss: 0.596565
+Epoch: [23/300] Iter:[70/148], Time: 0.3344, lr: 0.000499812129419297, Loss: 0.401168
+Epoch: [23/300] Iter:[80/148], Time: 0.3335, lr: 0.000499804737046361, Loss: 0.479612
+Epoch: [23/300] Iter:[90/148], Time: 0.3330, lr: 0.0004997972282581031, Loss: 0.410184
+Epoch: [23/300] Iter:[100/148], Time: 0.3325, lr: 0.0004997896030545235, Loss: 0.433633
+Epoch: [23/300] Iter:[110/148], Time: 0.3321, lr: 0.0004997817450203001, Loss: 0.430798
+Epoch: [23/300] Iter:[120/148], Time: 0.3318, lr: 0.0004997738287784159, Loss: 0.320344
+Epoch: [23/300] Iter:[130/148], Time: 0.3315, lr: 0.000499765737913549, Loss: 0.580432
+Epoch: [23/300] Iter:[140/148], Time: 0.3313, lr: 0.0004997574724256992, Loss: 0.453538
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 24
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint24
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint23
+Loss: 0.752, Mean Accuracy:  0.7729, Best Accuracy:  0.7747
+Epoch: [24/300] Iter:[0/148], Time: 0.8541, lr: 0.0004997507785446942, Loss: 0.512887
+Epoch: [24/300] Iter:[10/148], Time: 0.3755, lr: 0.0004997423384338617, Loss: 0.494997
+Epoch: [24/300] Iter:[20/148], Time: 0.3527, lr: 0.0004997336654923856, Loss: 0.639883
+Epoch: [24/300] Iter:[30/148], Time: 0.3448, lr: 0.0004997249343432486, Loss: 0.304840
+Epoch: [24/300] Iter:[40/148], Time: 0.3406, lr: 0.0004997160285711288, Loss: 0.465338
+Epoch: [24/300] Iter:[50/148], Time: 0.3381, lr: 0.0004997068899683654, Loss: 0.369678
+Epoch: [24/300] Iter:[60/148], Time: 0.3363, lr: 0.0004996976931579411, Loss: 0.500640
+Epoch: [24/300] Iter:[70/148], Time: 0.3351, lr: 0.0004996884381398559, Loss: 0.538717
+Epoch: [24/300] Iter:[80/148], Time: 0.3342, lr: 0.000499678892083466, Loss: 0.525060
+Epoch: [24/300] Iter:[90/148], Time: 0.3335, lr: 0.0004996692878194153, Loss: 0.344458
+Epoch: [24/300] Iter:[100/148], Time: 0.3329, lr: 0.0004996595089323819, Loss: 0.523276
+Epoch: [24/300] Iter:[110/148], Time: 0.3325, lr: 0.0004996496136300266, Loss: 0.333446
+Epoch: [24/300] Iter:[120/148], Time: 0.3322, lr: 0.0004996395437046885, Loss: 0.347636
+Epoch: [24/300] Iter:[130/148], Time: 0.3318, lr: 0.0004996293573640287, Loss: 0.329048
+Epoch: [24/300] Iter:[140/148], Time: 0.3316, lr: 0.000499619054608047, Loss: 0.472209
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 25
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint25
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint24
+Loss: 0.750, Mean Accuracy:  0.7683, Best Accuracy:  0.7747
+Epoch: [25/300] Iter:[0/148], Time: 1.0342, lr: 0.0004996106727048755, Loss: 0.384032
+Epoch: [25/300] Iter:[10/148], Time: 0.3914, lr: 0.0004996000789105892, Loss: 0.406270
+Epoch: [25/300] Iter:[20/148], Time: 0.3613, lr: 0.0004995893104933202, Loss: 0.261912
+Epoch: [25/300] Iter:[30/148], Time: 0.3507, lr: 0.0004995784838683903, Loss: 0.400067
+Epoch: [25/300] Iter:[40/148], Time: 0.3449, lr: 0.0004995674244128168, Loss: 0.625517
+Epoch: [25/300] Iter:[50/148], Time: 0.3416, lr: 0.0004995562485419214, Loss: 0.264869
+Epoch: [25/300] Iter:[60/148], Time: 0.3393, lr: 0.0004995449562557042, Loss: 0.620207
+Epoch: [25/300] Iter:[70/148], Time: 0.3377, lr: 0.0004995335475541651, Loss: 0.253635
+Epoch: [25/300] Iter:[80/148], Time: 0.3364, lr: 0.0004995219060219824, Loss: 0.347473
+Epoch: [25/300] Iter:[90/148], Time: 0.3355, lr: 0.0004995102062821388, Loss: 0.474023
+Epoch: [25/300] Iter:[100/148], Time: 0.3347, lr: 0.0004994983901269734, Loss: 0.625125
+Epoch: [25/300] Iter:[110/148], Time: 0.3342, lr: 0.0004994863411411643, Loss: 0.173959
+Epoch: [25/300] Iter:[120/148], Time: 0.3337, lr: 0.0004994741757400334, Loss: 0.234052
+Epoch: [25/300] Iter:[130/148], Time: 0.3332, lr: 0.0004994618939235806, Loss: 0.379859
+Epoch: [25/300] Iter:[140/148], Time: 0.3329, lr: 0.0004994494956918061, Loss: 0.328258
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 26
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint26
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint25
+Loss: 0.755, Mean Accuracy:  0.7699, Best Accuracy:  0.7747
+Epoch: [26/300] Iter:[0/148], Time: 0.7892, lr: 0.000499439425766468, Loss: 0.590765
+Epoch: [26/300] Iter:[10/148], Time: 0.3690, lr: 0.000499426678288728, Loss: 0.317964
+Epoch: [26/300] Iter:[20/148], Time: 0.3504, lr: 0.000499413872603327, Loss: 0.308554
+Epoch: [26/300] Iter:[30/148], Time: 0.3432, lr: 0.0004994008922949433, Loss: 0.452832
+Epoch: [26/300] Iter:[40/148], Time: 0.3393, lr: 0.0004993877955712378, Loss: 0.308081
+Epoch: [26/300] Iter:[50/148], Time: 0.3369, lr: 0.0004993745242245495, Loss: 0.376746
+Epoch: [26/300] Iter:[60/148], Time: 0.3355, lr: 0.0004993611364625394, Loss: 0.277105
+Epoch: [26/300] Iter:[70/148], Time: 0.3343, lr: 0.0004993475740775466, Loss: 0.375019
+Epoch: [26/300] Iter:[80/148], Time: 0.3335, lr: 0.0004993338952772319, Loss: 0.351915
+Epoch: [26/300] Iter:[90/148], Time: 0.3329, lr: 0.0004993200418539345, Loss: 0.264892
+Epoch: [26/300] Iter:[100/148], Time: 0.3325, lr: 0.0004993060720153153, Loss: 0.370220
+Epoch: [26/300] Iter:[110/148], Time: 0.3321, lr: 0.0004992919857613742, Loss: 0.284444
+Epoch: [26/300] Iter:[120/148], Time: 0.3318, lr: 0.0004992777248844504, Loss: 0.417965
+Epoch: [26/300] Iter:[130/148], Time: 0.3315, lr: 0.0004992633475922048, Loss: 0.390283
+Epoch: [26/300] Iter:[140/148], Time: 0.3313, lr: 0.0004992487956769764, Loss: 0.556300
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 27
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint27
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint26
+Loss: 0.797, Mean Accuracy:  0.7651, Best Accuracy:  0.7747
+Epoch: [27/300] Iter:[0/148], Time: 1.0302, lr: 0.0004992370377294719, Loss: 0.231650
+Epoch: [27/300] Iter:[10/148], Time: 0.3909, lr: 0.0004992223111912608, Loss: 0.485867
+Epoch: [27/300] Iter:[20/148], Time: 0.3605, lr: 0.000499207351822406, Loss: 0.327245
+Epoch: [27/300] Iter:[30/148], Time: 0.3500, lr: 0.0004991922760382295, Loss: 0.440002
+Epoch: [27/300] Iter:[40/148], Time: 0.3444, lr: 0.0004991770256310701, Loss: 0.551116
+Epoch: [27/300] Iter:[50/148], Time: 0.3412, lr: 0.000499161658808589, Loss: 0.421703
+Epoch: [27/300] Iter:[60/148], Time: 0.3389, lr: 0.000499146175570786, Loss: 0.456056
+Epoch: [27/300] Iter:[70/148], Time: 0.3373, lr: 0.0004991305177100003, Loss: 0.645909
+Epoch: [27/300] Iter:[80/148], Time: 0.3362, lr: 0.0004991148016415536, Loss: 0.378230
+Epoch: [27/300] Iter:[90/148], Time: 0.3353, lr: 0.0004990988527424634, Loss: 0.412096
+Epoch: [27/300] Iter:[100/148], Time: 0.3346, lr: 0.0004990827874280512, Loss: 0.506518
+Epoch: [27/300] Iter:[110/148], Time: 0.3339, lr: 0.0004990665474906564, Loss: 0.309145
+Epoch: [27/300] Iter:[120/148], Time: 0.3334, lr: 0.0004990502493456006, Loss: 0.436056
+Epoch: [27/300] Iter:[130/148], Time: 0.3330, lr: 0.0004990337183699012, Loss: 0.222192
+Epoch: [27/300] Iter:[140/148], Time: 0.3327, lr: 0.0004990170709788799, Loss: 0.336908
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 28
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best28
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best23
+Saving checkpoint at step: 28
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint28
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint27
+Loss: 0.737, Mean Accuracy:  0.7837, Best Accuracy:  0.7837
+Epoch: [28/300] Iter:[0/148], Time: 1.0721, lr: 0.0004990036832168698, Loss: 0.532825
+Epoch: [28/300] Iter:[10/148], Time: 0.3948, lr: 0.0004989868029952049, Loss: 0.449899
+Epoch: [28/300] Iter:[20/148], Time: 0.3631, lr: 0.0004989697481505573, Loss: 0.280714
+Epoch: [28/300] Iter:[30/148], Time: 0.3516, lr: 0.0004989525768905878, Loss: 0.336071
+Epoch: [28/300] Iter:[40/148], Time: 0.3458, lr: 0.0004989352892152965, Loss: 0.354734
+Epoch: [28/300] Iter:[50/148], Time: 0.3422, lr: 0.0004989178269170225, Loss: 0.315715
+Epoch: [28/300] Iter:[60/148], Time: 0.3399, lr: 0.0004989001899957657, Loss: 0.424375
+Epoch: [28/300] Iter:[70/148], Time: 0.3382, lr: 0.000498882494866848, Loss: 0.437646
+Epoch: [28/300] Iter:[80/148], Time: 0.3370, lr: 0.0004988645669072866, Loss: 0.426219
+Epoch: [28/300] Iter:[90/148], Time: 0.3359, lr: 0.0004988465807400644, Loss: 0.189555
+Epoch: [28/300] Iter:[100/148], Time: 0.3352, lr: 0.0004988284199498594, Loss: 0.509094
+Epoch: [28/300] Iter:[110/148], Time: 0.3344, lr: 0.0004988100845366716, Loss: 0.359107
+Epoch: [28/300] Iter:[120/148], Time: 0.3339, lr: 0.0004987916327081621, Loss: 0.349815
+Epoch: [28/300] Iter:[130/148], Time: 0.3334, lr: 0.0004987730644643307, Loss: 0.413447
+Epoch: [28/300] Iter:[140/148], Time: 0.3330, lr: 0.0004987542633898556, Loss: 0.153395
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 29
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint29
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint28
+Loss: 0.807, Mean Accuracy:  0.7668, Best Accuracy:  0.7837
+Epoch: [29/300] Iter:[0/148], Time: 1.1841, lr: 0.00049873924581334, Loss: 0.250354
+Epoch: [29/300] Iter:[10/148], Time: 0.4048, lr: 0.0004987202701158822, Loss: 0.364891
+Epoch: [29/300] Iter:[20/148], Time: 0.3680, lr: 0.0004987011197954416, Loss: 0.335549
+Epoch: [29/300] Iter:[30/148], Time: 0.3553, lr: 0.0004986818530596793, Loss: 0.178357
+Epoch: [29/300] Iter:[40/148], Time: 0.3487, lr: 0.0004986624117009342, Loss: 0.343377
+Epoch: [29/300] Iter:[50/148], Time: 0.3447, lr: 0.0004986429121345282, Loss: 0.287886
+Epoch: [29/300] Iter:[60/148], Time: 0.3449, lr: 0.0004986231797374785, Loss: 0.288416
+Epoch: [29/300] Iter:[70/148], Time: 0.3400, lr: 0.000498603330925107, Loss: 0.380765
+Epoch: [29/300] Iter:[80/148], Time: 0.3386, lr: 0.0004985833656974137, Loss: 0.461290
+Epoch: [29/300] Iter:[90/148], Time: 0.3374, lr: 0.0004985632840543985, Loss: 0.396512
+Epoch: [29/300] Iter:[100/148], Time: 0.3365, lr: 0.0004985430277884007, Loss: 0.425840
+Epoch: [29/300] Iter:[110/148], Time: 0.3357, lr: 0.0004985226551070809, Loss: 0.322385
+Epoch: [29/300] Iter:[120/148], Time: 0.3350, lr: 0.0004985020495951176, Loss: 0.207536
+Epoch: [29/300] Iter:[130/148], Time: 0.3346, lr: 0.0004984813858754933, Loss: 0.262836
+Epoch: [29/300] Iter:[140/148], Time: 0.3341, lr: 0.0004984605475328863, Loss: 0.477342
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 30
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint30
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint29
+Loss: 0.812, Mean Accuracy:  0.7620, Best Accuracy:  0.7837
+Epoch: [30/300] Iter:[0/148], Time: 0.9316, lr: 0.0004984437837265432, Loss: 0.305489
+Epoch: [30/300] Iter:[10/148], Time: 0.3824, lr: 0.0004984227125532925, Loss: 0.277236
+Epoch: [30/300] Iter:[20/148], Time: 0.3564, lr: 0.0004984014667570591, Loss: 0.537977
+Epoch: [30/300] Iter:[30/148], Time: 0.3470, lr: 0.0004983801045455039, Loss: 0.435125
+Epoch: [30/300] Iter:[40/148], Time: 0.3424, lr: 0.0004983586259186268, Loss: 0.286284
+Epoch: [30/300] Iter:[50/148], Time: 0.3394, lr: 0.000498336972668767, Loss: 0.387150
+Epoch: [30/300] Iter:[60/148], Time: 0.3375, lr: 0.0004983152030035853, Loss: 0.391981
+Epoch: [30/300] Iter:[70/148], Time: 0.3361, lr: 0.000498293258715421, Loss: 0.235464
+Epoch: [30/300] Iter:[80/148], Time: 0.3351, lr: 0.0004982711980119348, Loss: 0.172663
+Epoch: [30/300] Iter:[90/148], Time: 0.3341, lr: 0.0004982489626854658, Loss: 0.368163
+Epoch: [30/300] Iter:[100/148], Time: 0.3335, lr: 0.000498226610943675, Loss: 0.333530
+Epoch: [30/300] Iter:[110/148], Time: 0.3330, lr: 0.0004982041427865624, Loss: 0.243654
+Epoch: [30/300] Iter:[120/148], Time: 0.3326, lr: 0.0004981815000064671, Loss: 0.293507
+Epoch: [30/300] Iter:[130/148], Time: 0.3322, lr: 0.0004981587408110499, Loss: 0.307068
+Epoch: [30/300] Iter:[140/148], Time: 0.3319, lr: 0.00049813580699265, Loss: 0.222152
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 31
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint31
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint30
+Loss: 0.809, Mean Accuracy:  0.7665, Best Accuracy:  0.7837
+Epoch: [31/300] Iter:[0/148], Time: 1.1573, lr: 0.0004981174133718014, Loss: 0.181754
+Epoch: [31/300] Iter:[10/148], Time: 0.4026, lr: 0.0004980942467227578, Loss: 0.433387
+Epoch: [31/300] Iter:[20/148], Time: 0.3666, lr: 0.0004980709054507315, Loss: 0.440357
+Epoch: [31/300] Iter:[30/148], Time: 0.3540, lr: 0.0004980475059710443, Loss: 0.200732
+Epoch: [31/300] Iter:[40/148], Time: 0.3477, lr: 0.0004980238736607134, Loss: 0.193071
+Epoch: [31/300] Iter:[50/148], Time: 0.3437, lr: 0.0004980001831427217, Loss: 0.252603
+Epoch: [31/300] Iter:[60/148], Time: 0.3412, lr: 0.0004979762597940862, Loss: 0.426233
+Epoch: [31/300] Iter:[70/148], Time: 0.3393, lr: 0.000497952220030129, Loss: 0.406974
+Epoch: [31/300] Iter:[80/148], Time: 0.3379, lr: 0.0004979281220585108, Loss: 0.196232
+Epoch: [31/300] Iter:[90/148], Time: 0.3367, lr: 0.000497903791256249, Loss: 0.239259
+Epoch: [31/300] Iter:[100/148], Time: 0.3359, lr: 0.0004978794022463262, Loss: 0.221416
+Epoch: [31/300] Iter:[110/148], Time: 0.3352, lr: 0.0004978547804057598, Loss: 0.259827
+Epoch: [31/300] Iter:[120/148], Time: 0.3346, lr: 0.0004978300421498716, Loss: 0.267190
+Epoch: [31/300] Iter:[130/148], Time: 0.3341, lr: 0.0004978051874786615, Loss: 0.266880
+Epoch: [31/300] Iter:[140/148], Time: 0.3337, lr: 0.0004977801581844687, Loss: 0.299957
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 32
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint32
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint31
+Loss: 0.812, Mean Accuracy:  0.7752, Best Accuracy:  0.7837
+Epoch: [32/300] Iter:[0/148], Time: 0.7944, lr: 0.0004977600765414536, Loss: 0.346634
+Epoch: [32/300] Iter:[10/148], Time: 0.3706, lr: 0.0004977348144166172, Loss: 0.295501
+Epoch: [32/300] Iter:[20/148], Time: 0.3505, lr: 0.0004977094358764589, Loss: 0.624244
+Epoch: [32/300] Iter:[30/148], Time: 0.3434, lr: 0.0004976838827133179, Loss: 0.299249
+Epoch: [32/300] Iter:[40/148], Time: 0.3397, lr: 0.000497658213134855, Loss: 0.163260
+Epoch: [32/300] Iter:[50/148], Time: 0.3374, lr: 0.0004976323689334095, Loss: 0.478445
+Epoch: [32/300] Iter:[60/148], Time: 0.3358, lr: 0.000497606408316642, Loss: 0.309351
+Epoch: [32/300] Iter:[70/148], Time: 0.3346, lr: 0.0004975803312845528, Loss: 0.335169
+Epoch: [32/300] Iter:[80/148], Time: 0.3339, lr: 0.0004975540796294808, Loss: 0.357409
+Epoch: [32/300] Iter:[90/148], Time: 0.3332, lr: 0.000497527711559087, Loss: 0.193738
+Epoch: [32/300] Iter:[100/148], Time: 0.3327, lr: 0.0004975011688657105, Loss: 0.465764
+Epoch: [32/300] Iter:[110/148], Time: 0.3322, lr: 0.0004974745097570121, Loss: 0.323487
+Epoch: [32/300] Iter:[120/148], Time: 0.3319, lr: 0.0004974477342329919, Loss: 0.306522
+Epoch: [32/300] Iter:[130/148], Time: 0.3316, lr: 0.0004974207258783281, Loss: 0.246696
+Epoch: [32/300] Iter:[140/148], Time: 0.3314, lr: 0.0004973936593160033, Loss: 0.242785
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 33
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint33
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint32
+Loss: 0.851, Mean Accuracy:  0.7739, Best Accuracy:  0.7837
+Epoch: [33/300] Iter:[0/148], Time: 1.0862, lr: 0.0004973718896508217, Loss: 0.521260
+Epoch: [33/300] Iter:[10/148], Time: 0.3961, lr: 0.0004973445902578533, Loss: 0.410181
+Epoch: [33/300] Iter:[20/148], Time: 0.3632, lr: 0.0004973170580342412, Loss: 0.336678
+Epoch: [33/300] Iter:[30/148], Time: 0.3517, lr: 0.0004972894676029682, Loss: 0.351920
+Epoch: [33/300] Iter:[40/148], Time: 0.3459, lr: 0.0004972616443410516, Loss: 0.231055
+Epoch: [33/300] Iter:[50/148], Time: 0.3423, lr: 0.0004972338210791349, Loss: 0.239232
+Epoch: [33/300] Iter:[60/148], Time: 0.3399, lr: 0.0004972057067789137, Loss: 0.252021
+Epoch: [33/300] Iter:[70/148], Time: 0.3382, lr: 0.0004971775924786925, Loss: 0.210535
+Epoch: [33/300] Iter:[80/148], Time: 0.3370, lr: 0.0004971492453478277, Loss: 0.268086
+Epoch: [33/300] Iter:[90/148], Time: 0.3361, lr: 0.000497120781801641, Loss: 0.250923
+Epoch: [33/300] Iter:[100/148], Time: 0.3353, lr: 0.0004970921436324716, Loss: 0.236713
+Epoch: [33/300] Iter:[110/148], Time: 0.3346, lr: 0.0004970633890479803, Loss: 0.375317
+Epoch: [33/300] Iter:[120/148], Time: 0.3340, lr: 0.0004970345180481672, Loss: 0.213766
+Epoch: [33/300] Iter:[130/148], Time: 0.3336, lr: 0.0004970055306330323, Loss: 0.273663
+Epoch: [33/300] Iter:[140/148], Time: 0.3332, lr: 0.0004969763103872538, Loss: 0.158292
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 34
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint34
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint33
+Loss: 0.794, Mean Accuracy:  0.7800, Best Accuracy:  0.7837
+Epoch: [34/300] Iter:[0/148], Time: 1.1895, lr: 0.0004969529109075665, Loss: 0.259184
+Epoch: [34/300] Iter:[10/148], Time: 0.4048, lr: 0.0004969234578311443, Loss: 0.181112
+Epoch: [34/300] Iter:[20/148], Time: 0.3681, lr: 0.0004968938883394003, Loss: 0.299805
+Epoch: [34/300] Iter:[30/148], Time: 0.3549, lr: 0.0004968642024323344, Loss: 0.321286
+Epoch: [34/300] Iter:[40/148], Time: 0.3485, lr: 0.0004968343419022858, Loss: 0.137570
+Epoch: [34/300] Iter:[50/148], Time: 0.3445, lr: 0.0004968043649569154, Loss: 0.206315
+Epoch: [34/300] Iter:[60/148], Time: 0.3417, lr: 0.0004967742715962231, Loss: 0.358693
+Epoch: [34/300] Iter:[70/148], Time: 0.3397, lr: 0.0004967440036125481, Loss: 0.207307
+Epoch: [34/300] Iter:[80/148], Time: 0.3382, lr: 0.0004967136192135513, Loss: 0.107475
+Epoch: [34/300] Iter:[90/148], Time: 0.3371, lr: 0.0004966830019839108, Loss: 0.572192
+Epoch: [34/300] Iter:[100/148], Time: 0.3361, lr: 0.0004966523847542703, Loss: 0.416645
+Epoch: [34/300] Iter:[110/148], Time: 0.3354, lr: 0.0004966215346939862, Loss: 0.314522
+Epoch: [34/300] Iter:[120/148], Time: 0.3348, lr: 0.0004965905682183802, Loss: 0.180233
+Epoch: [34/300] Iter:[130/148], Time: 0.3344, lr: 0.0004965594853274524, Loss: 0.142062
+Epoch: [34/300] Iter:[140/148], Time: 0.3340, lr: 0.0004965282278135419, Loss: 0.197224
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 35
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint35
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint34
+Loss: 0.890, Mean Accuracy:  0.7656, Best Accuracy:  0.7837
+Epoch: [35/300] Iter:[0/148], Time: 0.8887, lr: 0.0004965030821040273, Loss: 0.285653
+Epoch: [35/300] Iter:[10/148], Time: 0.3785, lr: 0.0004964715917594731, Loss: 0.402260
+Epoch: [35/300] Iter:[20/148], Time: 0.3546, lr: 0.0004964399849995971, Loss: 0.220416
+Epoch: [35/300] Iter:[30/148], Time: 0.3463, lr: 0.0004964081454090774, Loss: 0.253145
+Epoch: [35/300] Iter:[40/148], Time: 0.3415, lr: 0.0004963762476108968, Loss: 0.248448
+Epoch: [35/300] Iter:[50/148], Time: 0.3388, lr: 0.0004963441751897335, Loss: 0.281065
+Epoch: [35/300] Iter:[60/148], Time: 0.3369, lr: 0.0004963119863532484, Loss: 0.247160
+Epoch: [35/300] Iter:[70/148], Time: 0.3357, lr: 0.0004962796228937805, Loss: 0.427727
+Epoch: [35/300] Iter:[80/148], Time: 0.3347, lr: 0.0004962472012266517, Loss: 0.345857
+Epoch: [35/300] Iter:[90/148], Time: 0.3340, lr: 0.0004962145467288792, Loss: 0.162754
+Epoch: [35/300] Iter:[100/148], Time: 0.3333, lr: 0.0004961818340234458, Loss: 0.203572
+Epoch: [35/300] Iter:[110/148], Time: 0.3328, lr: 0.0004961488884873688, Loss: 0.251266
+Epoch: [35/300] Iter:[120/148], Time: 0.3324, lr: 0.00049611582653597, Loss: 0.199173
+Epoch: [35/300] Iter:[130/148], Time: 0.3321, lr: 0.0004960827063769102, Loss: 0.393359
+Epoch: [35/300] Iter:[140/148], Time: 0.3317, lr: 0.0004960493533872068, Loss: 0.201036
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 36
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best36
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best28
+Saving checkpoint at step: 36
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint36
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint35
+Loss: 0.804, Mean Accuracy:  0.7845, Best Accuracy:  0.7845
+Epoch: [36/300] Iter:[0/148], Time: 0.7976, lr: 0.0004960225778631866, Loss: 0.319859
+Epoch: [36/300] Iter:[10/148], Time: 0.3711, lr: 0.0004959889920428395, Loss: 0.151021
+Epoch: [36/300] Iter:[20/148], Time: 0.3506, lr: 0.0004959552898071706, Loss: 0.225022
+Epoch: [36/300] Iter:[30/148], Time: 0.3437, lr: 0.0004959214711561799, Loss: 0.168152
+Epoch: [36/300] Iter:[40/148], Time: 0.3396, lr: 0.0004958874778822064, Loss: 0.154816
+Epoch: [36/300] Iter:[50/148], Time: 0.3373, lr: 0.0004958533099852502, Loss: 0.260460
+Epoch: [36/300] Iter:[60/148], Time: 0.3357, lr: 0.0004958190838806331, Loss: 0.154270
+Epoch: [36/300] Iter:[70/148], Time: 0.3346, lr: 0.0004957846831530333, Loss: 0.198034
+Epoch: [36/300] Iter:[80/148], Time: 0.3337, lr: 0.0004957501078024507, Loss: 0.178236
+Epoch: [36/300] Iter:[90/148], Time: 0.3330, lr: 0.0004957154160365462, Loss: 0.326764
+Epoch: [36/300] Iter:[100/148], Time: 0.3325, lr: 0.00049568060785532, Loss: 0.159956
+Epoch: [36/300] Iter:[110/148], Time: 0.3320, lr: 0.000495645625051111, Loss: 0.172015
+Epoch: [36/300] Iter:[120/148], Time: 0.3316, lr: 0.0004956105258315802, Loss: 0.235223
+Epoch: [36/300] Iter:[130/148], Time: 0.3315, lr: 0.0004955752519890666, Loss: 0.203620
+Epoch: [36/300] Iter:[140/148], Time: 0.3312, lr: 0.0004955398617312312, Loss: 0.176674
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 37
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint37
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint36
+Loss: 0.808, Mean Accuracy:  0.7807, Best Accuracy:  0.7845
+Epoch: [37/300] Iter:[0/148], Time: 0.8106, lr: 0.0004955113981850445, Loss: 0.317525
+Epoch: [37/300] Iter:[10/148], Time: 0.3715, lr: 0.0004954757750965655, Loss: 0.229530
+Epoch: [37/300] Iter:[20/148], Time: 0.3508, lr: 0.0004954400355927646, Loss: 0.233811
+Epoch: [37/300] Iter:[30/148], Time: 0.3433, lr: 0.0004954040632583201, Loss: 0.160272
+Epoch: [37/300] Iter:[40/148], Time: 0.3395, lr: 0.0004953680327162147, Loss: 0.161682
+Epoch: [37/300] Iter:[50/148], Time: 0.3373, lr: 0.0004953318275511265, Loss: 0.191527
+Epoch: [37/300] Iter:[60/148], Time: 0.3357, lr: 0.0004952955059707165, Loss: 0.297880
+Epoch: [37/300] Iter:[70/148], Time: 0.3346, lr: 0.0004952590097673237, Loss: 0.238726
+Epoch: [37/300] Iter:[80/148], Time: 0.3338, lr: 0.0004952223971486092, Loss: 0.160822
+Epoch: [37/300] Iter:[90/148], Time: 0.3331, lr: 0.0004951856099069118, Loss: 0.147077
+Epoch: [37/300] Iter:[100/148], Time: 0.3327, lr: 0.0004951487644575536, Loss: 0.276794
+Epoch: [37/300] Iter:[110/148], Time: 0.3322, lr: 0.0004951116861775517, Loss: 0.222264
+Epoch: [37/300] Iter:[120/148], Time: 0.3318, lr: 0.000495074491482228, Loss: 0.080681
+Epoch: [37/300] Iter:[130/148], Time: 0.3315, lr: 0.0004950372385792434, Loss: 0.207778
+Epoch: [37/300] Iter:[140/148], Time: 0.3313, lr: 0.0004949997528456151, Loss: 0.236552
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 38
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint38
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint37
+Loss: 0.864, Mean Accuracy:  0.7746, Best Accuracy:  0.7845
+Epoch: [38/300] Iter:[0/148], Time: 0.8075, lr: 0.0004949697176925838, Loss: 0.196791
+Epoch: [38/300] Iter:[10/148], Time: 0.3701, lr: 0.0004949319991283119, Loss: 0.294746
+Epoch: [38/300] Iter:[20/148], Time: 0.3501, lr: 0.0004948941641487181, Loss: 0.193239
+Epoch: [38/300] Iter:[30/148], Time: 0.3428, lr: 0.0004948560963384807, Loss: 0.359843
+Epoch: [38/300] Iter:[40/148], Time: 0.3391, lr: 0.0004948179703205824, Loss: 0.342899
+Epoch: [38/300] Iter:[50/148], Time: 0.3370, lr: 0.0004947797860950232, Loss: 0.280459
+Epoch: [38/300] Iter:[60/148], Time: 0.3354, lr: 0.0004947413690388203, Loss: 0.159158
+Epoch: [38/300] Iter:[70/148], Time: 0.3344, lr: 0.0004947028355672956, Loss: 0.203971
+Epoch: [38/300] Iter:[80/148], Time: 0.3336, lr: 0.0004946641274727881, Loss: 0.269424
+Epoch: [38/300] Iter:[90/148], Time: 0.3330, lr: 0.0004946253029629588, Loss: 0.151742
+Epoch: [38/300] Iter:[100/148], Time: 0.3325, lr: 0.0004945863620378077, Loss: 0.100314
+Epoch: [38/300] Iter:[110/148], Time: 0.3321, lr: 0.0004945472464896739, Loss: 0.237485
+Epoch: [38/300] Iter:[120/148], Time: 0.3318, lr: 0.0004945080145262182, Loss: 0.163293
+Epoch: [38/300] Iter:[130/148], Time: 0.3329, lr: 0.0004944686079397798, Loss: 0.129470
+Epoch: [38/300] Iter:[140/148], Time: 0.3313, lr: 0.0004944291431456804, Loss: 0.146542
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 39
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint39
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint38
+Loss: 0.862, Mean Accuracy:  0.7812, Best Accuracy:  0.7845
+Epoch: [39/300] Iter:[0/148], Time: 0.8141, lr: 0.0004943974199704826, Loss: 0.260067
+Epoch: [39/300] Iter:[10/148], Time: 0.3718, lr: 0.0004943576059304178, Loss: 0.181272
+Epoch: [39/300] Iter:[20/148], Time: 0.3508, lr: 0.000494317733682692, Loss: 0.184152
+Epoch: [39/300] Iter:[30/148], Time: 0.3436, lr: 0.0004942776868119836, Loss: 0.121041
+Epoch: [39/300] Iter:[40/148], Time: 0.3399, lr: 0.0004942375235259533, Loss: 0.261051
+Epoch: [39/300] Iter:[50/148], Time: 0.3374, lr: 0.0004941971856169403, Loss: 0.169919
+Epoch: [39/300] Iter:[60/148], Time: 0.3359, lr: 0.0004941567312926054, Loss: 0.203538
+Epoch: [39/300] Iter:[70/148], Time: 0.3346, lr: 0.0004941161023452878, Loss: 0.206586
+Epoch: [39/300] Iter:[80/148], Time: 0.3339, lr: 0.0004940753569826484, Loss: 0.463058
+Epoch: [39/300] Iter:[90/148], Time: 0.3332, lr: 0.0004940344952046871, Loss: 0.278013
+Epoch: [39/300] Iter:[100/148], Time: 0.3328, lr: 0.0004939934588037431, Loss: 0.377430
+Epoch: [39/300] Iter:[110/148], Time: 0.3323, lr: 0.0004939523641951382, Loss: 0.240765
+Epoch: [39/300] Iter:[120/148], Time: 0.3320, lr: 0.0004939110367558897, Loss: 0.301004
+Epoch: [39/300] Iter:[130/148], Time: 0.3316, lr: 0.0004938696511089802, Loss: 0.220610
+Epoch: [39/300] Iter:[140/148], Time: 0.3314, lr: 0.000493828032631427, Loss: 0.183654
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 40
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint40
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint39
+Loss: 0.892, Mean Accuracy:  0.7766, Best Accuracy:  0.7845
+Epoch: [40/300] Iter:[0/148], Time: 0.7943, lr: 0.0004937946796417236, Loss: 0.087948
+Epoch: [40/300] Iter:[10/148], Time: 0.3711, lr: 0.0004937528283335268, Loss: 0.448200
+Epoch: [40/300] Iter:[20/148], Time: 0.3504, lr: 0.0004937109188176692, Loss: 0.158785
+Epoch: [40/300] Iter:[30/148], Time: 0.3433, lr: 0.0004936688346788287, Loss: 0.497411
+Epoch: [40/300] Iter:[40/148], Time: 0.3392, lr: 0.0004936265759170055, Loss: 0.302636
+Epoch: [40/300] Iter:[50/148], Time: 0.3369, lr: 0.0004935842007398605, Loss: 0.237835
+Epoch: [40/300] Iter:[60/148], Time: 0.3354, lr: 0.0004935417091473937, Loss: 0.227512
+Epoch: [40/300] Iter:[70/148], Time: 0.3343, lr: 0.0004934989847242832, Loss: 0.163144
+Epoch: [40/300] Iter:[80/148], Time: 0.3335, lr: 0.0004934562603011727, Loss: 0.172074
+Epoch: [40/300] Iter:[90/148], Time: 0.3329, lr: 0.0004934133030474186, Loss: 0.098998
+Epoch: [40/300] Iter:[100/148], Time: 0.3324, lr: 0.0004933702293783426, Loss: 0.126958
+Epoch: [40/300] Iter:[110/148], Time: 0.3320, lr: 0.0004933270392939448, Loss: 0.067300
+Epoch: [40/300] Iter:[120/148], Time: 0.3316, lr: 0.0004932836745865643, Loss: 0.132868
+Epoch: [40/300] Iter:[130/148], Time: 0.3314, lr: 0.0004932401934638619, Loss: 0.277674
+Epoch: [40/300] Iter:[140/148], Time: 0.3312, lr: 0.0004931965959258378, Loss: 0.208358
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 41
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint41
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint40
+Loss: 0.898, Mean Accuracy:  0.7802, Best Accuracy:  0.7845
+Epoch: [41/300] Iter:[0/148], Time: 0.9570, lr: 0.0004931615549139678, Loss: 0.239040
+Epoch: [41/300] Iter:[10/148], Time: 0.3841, lr: 0.0004931177245453, Loss: 0.093689
+Epoch: [41/300] Iter:[20/148], Time: 0.3575, lr: 0.0004930737195536494, Loss: 0.264116
+Epoch: [41/300] Iter:[30/148], Time: 0.3484, lr: 0.000493029598146677, Loss: 0.164767
+Epoch: [41/300] Iter:[40/148], Time: 0.3433, lr: 0.000492985243909061, Loss: 0.094415
+Epoch: [41/300] Iter:[50/148], Time: 0.3402, lr: 0.000492940831463784, Loss: 0.262460
+Epoch: [41/300] Iter:[60/148], Time: 0.3381, lr: 0.0004928963026031852, Loss: 0.260624
+Epoch: [41/300] Iter:[70/148], Time: 0.3367, lr: 0.0004928515991196036, Loss: 0.046380
+Epoch: [41/300] Iter:[80/148], Time: 0.3357, lr: 0.0004928067792207003, Loss: 0.140616
+Epoch: [41/300] Iter:[90/148], Time: 0.3347, lr: 0.0004927617264911532, Loss: 0.153692
+Epoch: [41/300] Iter:[100/148], Time: 0.3341, lr: 0.0004927166737616062, Loss: 0.113596
+Epoch: [41/300] Iter:[110/148], Time: 0.3335, lr: 0.0004926713882014155, Loss: 0.113784
+Epoch: [41/300] Iter:[120/148], Time: 0.3331, lr: 0.000492625986225903, Loss: 0.070771
+Epoch: [41/300] Iter:[130/148], Time: 0.3327, lr: 0.0004925804678350687, Loss: 0.112067
+Epoch: [41/300] Iter:[140/148], Time: 0.3324, lr: 0.0004925348330289125, Loss: 0.162916
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 42
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint42
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint41
+Loss: 0.891, Mean Accuracy:  0.7832, Best Accuracy:  0.7845
+Epoch: [42/300] Iter:[0/148], Time: 1.0585, lr: 0.000492498220410198, Loss: 0.266544
+Epoch: [42/300] Iter:[10/148], Time: 0.3946, lr: 0.0004924522363580763, Loss: 0.248976
+Epoch: [42/300] Iter:[20/148], Time: 0.3625, lr: 0.0004924061940982938, Loss: 0.245079
+Epoch: [42/300] Iter:[30/148], Time: 0.3513, lr: 0.0004923599772155285, Loss: 0.147096
+Epoch: [42/300] Iter:[40/148], Time: 0.3455, lr: 0.0004923137021251023, Loss: 0.055688
+Epoch: [42/300] Iter:[50/148], Time: 0.3420, lr: 0.0004922672524116933, Loss: 0.136133
+Epoch: [42/300] Iter:[60/148], Time: 0.3395, lr: 0.0004922206280753016, Loss: 0.187568
+Epoch: [42/300] Iter:[70/148], Time: 0.3380, lr: 0.0004921738873235881, Loss: 0.179763
+Epoch: [42/300] Iter:[80/148], Time: 0.3368, lr: 0.0004921269719488919, Loss: 0.061178
+Epoch: [42/300] Iter:[90/148], Time: 0.3359, lr: 0.0004920799401588738, Loss: 0.250187
+Epoch: [42/300] Iter:[100/148], Time: 0.3350, lr: 0.0004920327919535339, Loss: 0.106563
+Epoch: [42/300] Iter:[110/148], Time: 0.3344, lr: 0.0004919855273328722, Loss: 0.164524
+Epoch: [42/300] Iter:[120/148], Time: 0.3338, lr: 0.0004919380880892277, Loss: 0.164792
+Epoch: [42/300] Iter:[130/148], Time: 0.3334, lr: 0.0004918905324302614, Loss: 0.344949
+Epoch: [42/300] Iter:[140/148], Time: 0.3330, lr: 0.0004918428603559732, Loss: 0.271054
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 43
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint43
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint42
+Loss: 0.943, Mean Accuracy:  0.7646, Best Accuracy:  0.7845
+Epoch: [43/300] Iter:[0/148], Time: 1.1765, lr: 0.0004918045597150922, Loss: 0.324811
+Epoch: [43/300] Iter:[10/148], Time: 0.4044, lr: 0.0004917565966024995, Loss: 0.078029
+Epoch: [43/300] Iter:[20/148], Time: 0.3677, lr: 0.000491708517074585, Loss: 0.373826
+Epoch: [43/300] Iter:[30/148], Time: 0.3549, lr: 0.0004916602629236877, Loss: 0.130453
+Epoch: [43/300] Iter:[40/148], Time: 0.3481, lr: 0.0004916119505651295, Loss: 0.111353
+Epoch: [43/300] Iter:[50/148], Time: 0.3442, lr: 0.0004915634053759277, Loss: 0.204373
+Epoch: [43/300] Iter:[60/148], Time: 0.3414, lr: 0.0004915148019790649, Loss: 0.132657
+Epoch: [43/300] Iter:[70/148], Time: 0.3395, lr: 0.0004914660239592195, Loss: 0.258337
+Epoch: [43/300] Iter:[80/148], Time: 0.3379, lr: 0.0004914171295240521, Loss: 0.254504
+Epoch: [43/300] Iter:[90/148], Time: 0.3368, lr: 0.0004913680604659021, Loss: 0.290355
+Epoch: [43/300] Iter:[100/148], Time: 0.3359, lr: 0.0004913188167847693, Loss: 0.097915
+Epoch: [43/300] Iter:[110/148], Time: 0.3352, lr: 0.0004912695148959756, Loss: 0.086856
+Epoch: [43/300] Iter:[120/148], Time: 0.3346, lr: 0.0004912200965918601, Loss: 0.163113
+Epoch: [43/300] Iter:[130/148], Time: 0.3341, lr: 0.0004911704454571009, Loss: 0.096603
+Epoch: [43/300] Iter:[140/148], Time: 0.3337, lr: 0.0004911206779070199, Loss: 0.100787
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 44
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint44
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint43
+Loss: 0.932, Mean Accuracy:  0.7784, Best Accuracy:  0.7845
+Epoch: [44/300] Iter:[0/148], Time: 0.8829, lr: 0.0004910808056592941, Loss: 0.209010
+Epoch: [44/300] Iter:[10/148], Time: 0.3780, lr: 0.0004910308634862304, Loss: 0.164350
+Epoch: [44/300] Iter:[20/148], Time: 0.3545, lr: 0.0004909807466901839, Loss: 0.466456
+Epoch: [44/300] Iter:[30/148], Time: 0.3459, lr: 0.0004909304552711546, Loss: 0.166577
+Epoch: [44/300] Iter:[40/148], Time: 0.3417, lr: 0.0004908800474368036, Loss: 0.194687
+Epoch: [44/300] Iter:[50/148], Time: 0.3389, lr: 0.0004908295231871307, Loss: 0.079350
+Epoch: [44/300] Iter:[60/148], Time: 0.3371, lr: 0.000490778882522136, Loss: 0.139112
+Epoch: [44/300] Iter:[70/148], Time: 0.3358, lr: 0.0004907280672341585, Loss: 0.101644
+Epoch: [44/300] Iter:[80/148], Time: 0.3348, lr: 0.0004906771355308592, Loss: 0.433029
+Epoch: [44/300] Iter:[90/148], Time: 0.3340, lr: 0.0004906260292045772, Loss: 0.254072
+Epoch: [44/300] Iter:[100/148], Time: 0.3334, lr: 0.0004905748064629734, Loss: 0.147269
+Epoch: [44/300] Iter:[110/148], Time: 0.3329, lr: 0.0004905234673060477, Loss: 0.119001
+Epoch: [44/300] Iter:[120/148], Time: 0.3325, lr: 0.0004904719535261393, Loss: 0.204381
+Epoch: [44/300] Iter:[130/148], Time: 0.3322, lr: 0.000490420323330909, Loss: 0.171368
+Epoch: [44/300] Iter:[140/148], Time: 0.3319, lr: 0.0004903685767203569, Loss: 0.127874
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 45
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint45
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint44
+Loss: 0.964, Mean Accuracy:  0.7754, Best Accuracy:  0.7845
+Epoch: [45/300] Iter:[0/148], Time: 0.8301, lr: 0.0004903270746581256, Loss: 0.224672
+Epoch: [45/300] Iter:[10/148], Time: 0.3724, lr: 0.000490275037009269, Loss: 0.036333
+Epoch: [45/300] Iter:[20/148], Time: 0.3518, lr: 0.0004902228829450905, Loss: 0.090813
+Epoch: [45/300] Iter:[30/148], Time: 0.3439, lr: 0.0004901706124655902, Loss: 0.193583
+Epoch: [45/300] Iter:[40/148], Time: 0.3397, lr: 0.0004901182255707681, Loss: 0.244486
+Epoch: [45/300] Iter:[50/148], Time: 0.3374, lr: 0.0004900656058453023, Loss: 0.193126
+Epoch: [45/300] Iter:[60/148], Time: 0.3357, lr: 0.0004900129279121757, Loss: 0.308871
+Epoch: [45/300] Iter:[70/148], Time: 0.3347, lr: 0.0004899601335637271, Loss: 0.154431
+Epoch: [45/300] Iter:[80/148], Time: 0.3337, lr: 0.0004899071645922959, Loss: 0.092802
+Epoch: [45/300] Iter:[90/148], Time: 0.3332, lr: 0.0004898540209978819, Loss: 0.176978
+Epoch: [45/300] Iter:[100/148], Time: 0.3326, lr: 0.000489800819195807, Loss: 0.313155
+Epoch: [45/300] Iter:[110/148], Time: 0.3322, lr: 0.0004897474427707493, Loss: 0.068971
+Epoch: [45/300] Iter:[120/148], Time: 0.3318, lr: 0.0004896938917227089, Loss: 0.291784
+Epoch: [45/300] Iter:[130/148], Time: 0.3316, lr: 0.0004896402824670076, Loss: 0.233213
+Epoch: [45/300] Iter:[140/148], Time: 0.3313, lr: 0.0004895864403806627, Loss: 0.145632
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 46
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint46
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint45
+Loss: 1.020, Mean Accuracy:  0.7615, Best Accuracy:  0.7845
+Epoch: [46/300] Iter:[0/148], Time: 0.7730, lr: 0.0004895433667115867, Loss: 0.213186
+Epoch: [46/300] Iter:[10/148], Time: 0.3675, lr: 0.0004894892917945981, Loss: 0.176846
+Epoch: [46/300] Iter:[20/148], Time: 0.3486, lr: 0.0004894351586699486, Loss: 0.334513
+Epoch: [46/300] Iter:[30/148], Time: 0.3422, lr: 0.0004893808509223163, Loss: 0.192652
+Epoch: [46/300] Iter:[40/148], Time: 0.3385, lr: 0.0004893264267593622, Loss: 0.050509
+Epoch: [46/300] Iter:[50/148], Time: 0.3365, lr: 0.0004892718279734254, Loss: 0.159505
+Epoch: [46/300] Iter:[60/148], Time: 0.3350, lr: 0.0004892171709798276, Loss: 0.266401
+Epoch: [46/300] Iter:[70/148], Time: 0.3340, lr: 0.0004891622811555862, Loss: 0.246149
+Epoch: [46/300] Iter:[80/148], Time: 0.3332, lr: 0.000489107274916023, Loss: 0.204511
+Epoch: [46/300] Iter:[90/148], Time: 0.3326, lr: 0.000489052152261138, Loss: 0.184118
+Epoch: [46/300] Iter:[100/148], Time: 0.3322, lr: 0.0004889969131909311, Loss: 0.124226
+Epoch: [46/300] Iter:[110/148], Time: 0.3318, lr: 0.0004889414994977415, Loss: 0.153551
+Epoch: [46/300] Iter:[120/148], Time: 0.3314, lr: 0.00048888596938923, Loss: 0.109355
+Epoch: [46/300] Iter:[130/148], Time: 0.3312, lr: 0.0004888303228653967, Loss: 0.083806
+Epoch: [46/300] Iter:[140/148], Time: 0.3309, lr: 0.0004887745599262416, Loss: 0.160822
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 47
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint47
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint46
+Loss: 0.889, Mean Accuracy:  0.7842, Best Accuracy:  0.7845
+Epoch: [47/300] Iter:[0/148], Time: 0.8451, lr: 0.0004887297982349992, Loss: 0.337985
+Epoch: [47/300] Iter:[10/148], Time: 0.3739, lr: 0.0004886737442575395, Loss: 0.094665
+Epoch: [47/300] Iter:[20/148], Time: 0.3520, lr: 0.000488617573864758, Loss: 0.032856
+Epoch: [47/300] Iter:[30/148], Time: 0.3439, lr: 0.0004885612870566547, Loss: 0.128457
+Epoch: [47/300] Iter:[40/148], Time: 0.3399, lr: 0.0004885047674179077, Loss: 0.079826
+Epoch: [47/300] Iter:[50/148], Time: 0.3377, lr: 0.0004884481895714998, Loss: 0.065280
+Epoch: [47/300] Iter:[60/148], Time: 0.3360, lr: 0.0004883914953097701, Loss: 0.193221
+Epoch: [47/300] Iter:[70/148], Time: 0.3348, lr: 0.0004883346264250576, Loss: 0.166266
+Epoch: [47/300] Iter:[80/148], Time: 0.3339, lr: 0.0004882776702288538, Loss: 0.161630
+Epoch: [47/300] Iter:[90/148], Time: 0.3332, lr: 0.0004882205103058368, Loss: 0.292731
+Epoch: [47/300] Iter:[100/148], Time: 0.3326, lr: 0.0004881632630713284, Loss: 0.216265
+Epoch: [47/300] Iter:[110/148], Time: 0.3322, lr: 0.0004881058703176677, Loss: 0.049859
+Epoch: [47/300] Iter:[120/148], Time: 0.3318, lr: 0.00048804833204485476, Loss: 0.063258
+Epoch: [47/300] Iter:[130/148], Time: 0.3315, lr: 0.0004879906482528895, Loss: 0.102229
+Epoch: [47/300] Iter:[140/148], Time: 0.3314, lr: 0.00048793284804560244, Loss: 0.207298
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 48
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best48
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best36
+Saving checkpoint at step: 48
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint48
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint47
+Loss: 0.887, Mean Accuracy:  0.7860, Best Accuracy:  0.7860
+Epoch: [48/300] Iter:[0/148], Time: 0.7944, lr: 0.0004878865147475153, Loss: 0.214623
+Epoch: [48/300] Iter:[10/148], Time: 0.3700, lr: 0.00048782845260575414, Loss: 0.128607
+Epoch: [48/300] Iter:[20/148], Time: 0.3499, lr: 0.0004877702740486711, Loss: 0.095050
+Epoch: [48/300] Iter:[30/148], Time: 0.3428, lr: 0.00048771194997243583, Loss: 0.072091
+Epoch: [48/300] Iter:[40/148], Time: 0.3391, lr: 0.0004876535094808787, Loss: 0.034876
+Epoch: [48/300] Iter:[50/148], Time: 0.3368, lr: 0.0004875949234701693, Loss: 0.093691
+Epoch: [48/300] Iter:[60/148], Time: 0.3355, lr: 0.00048753616283647716, Loss: 0.075257
+Epoch: [48/300] Iter:[70/148], Time: 0.3343, lr: 0.00048747731489129364, Loss: 0.117278
+Epoch: [48/300] Iter:[80/148], Time: 0.3336, lr: 0.00048741832142695785, Loss: 0.226113
+Epoch: [48/300] Iter:[90/148], Time: 0.3329, lr: 0.00048735918244346976, Loss: 0.137349
+Epoch: [48/300] Iter:[100/148], Time: 0.3324, lr: 0.0004872999561484903, Loss: 0.303244
+Epoch: [48/300] Iter:[110/148], Time: 0.3319, lr: 0.0004872405552305281, Loss: 0.106544
+Epoch: [48/300] Iter:[120/148], Time: 0.3316, lr: 0.00048718100879341364, Loss: 0.112735
+Epoch: [48/300] Iter:[130/148], Time: 0.3314, lr: 0.00048712134594097733, Loss: 0.208814
+Epoch: [48/300] Iter:[140/148], Time: 0.3312, lr: 0.00048706153756938875, Loss: 0.060161
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 49
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint49
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint48
+Loss: 0.898, Mean Accuracy:  0.7840, Best Accuracy:  0.7860
+Epoch: [49/300] Iter:[0/148], Time: 1.1477, lr: 0.0004870136035606265, Loss: 0.113593
+Epoch: [49/300] Iter:[10/148], Time: 0.4012, lr: 0.00048695356235839427, Loss: 0.091657
+Epoch: [49/300] Iter:[20/148], Time: 0.3664, lr: 0.0004868933465331793, Loss: 0.107535
+Epoch: [49/300] Iter:[30/148], Time: 0.3538, lr: 0.0004868330725003034, Loss: 0.195793
+Epoch: [49/300] Iter:[40/148], Time: 0.3477, lr: 0.0004867725947406143, Loss: 0.134264
+Epoch: [49/300] Iter:[50/148], Time: 0.3438, lr: 0.0004867120005656034, Loss: 0.205875
+Epoch: [49/300] Iter:[60/148], Time: 0.3411, lr: 0.00048665126087144017, Loss: 0.098392
+Epoch: [49/300] Iter:[70/148], Time: 0.3391, lr: 0.0004865904338657856, Loss: 0.095975
+Epoch: [49/300] Iter:[80/148], Time: 0.3378, lr: 0.0004865294322371483, Loss: 0.093802
+Epoch: [49/300] Iter:[90/148], Time: 0.3367, lr: 0.00048646831419318914, Loss: 0.076478
+Epoch: [49/300] Iter:[100/148], Time: 0.3358, lr: 0.00048640702152624726, Loss: 0.206233
+Epoch: [49/300] Iter:[110/148], Time: 0.3350, lr: 0.00048634567065164447, Loss: 0.055824
+Epoch: [49/300] Iter:[120/148], Time: 0.3344, lr: 0.0004862841160502285, Loss: 0.055162
+Epoch: [49/300] Iter:[130/148], Time: 0.3338, lr: 0.0004862224741373211, Loss: 0.068555
+Epoch: [49/300] Iter:[140/148], Time: 0.3335, lr: 0.00048616068670526147, Loss: 0.145048
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 50
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best50
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best48
+Saving checkpoint at step: 50
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint50
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint49
+Loss: 0.940, Mean Accuracy:  0.7862, Best Accuracy:  0.7862
+Epoch: [50/300] Iter:[0/148], Time: 1.2386, lr: 0.0004861111519858241, Loss: 0.169447
+Epoch: [50/300] Iter:[10/148], Time: 0.4110, lr: 0.0004860490735154599, Loss: 0.103502
+Epoch: [50/300] Iter:[20/148], Time: 0.3713, lr: 0.00048598693683743477, Loss: 0.177888
+Epoch: [50/300] Iter:[30/148], Time: 0.3574, lr: 0.00048592465464025736, Loss: 0.122079
+Epoch: [50/300] Iter:[40/148], Time: 0.3501, lr: 0.00048586222692392766, Loss: 0.087733
+Epoch: [50/300] Iter:[50/148], Time: 0.3458, lr: 0.0004857995954807848, Loss: 0.129582
+Epoch: [50/300] Iter:[60/148], Time: 0.3428, lr: 0.00048573690582998097, Loss: 0.122825
+Epoch: [50/300] Iter:[70/148], Time: 0.3406, lr: 0.0004856740706600249, Loss: 0.115827
+Epoch: [50/300] Iter:[80/148], Time: 0.3390, lr: 0.00048561106086708605, Loss: 0.221513
+Epoch: [50/300] Iter:[90/148], Time: 0.3378, lr: 0.0004855479928664863, Loss: 0.188757
+Epoch: [50/300] Iter:[100/148], Time: 0.3368, lr: 0.00048548475024290383, Loss: 0.165860
+Epoch: [50/300] Iter:[110/148], Time: 0.3360, lr: 0.00048542136210016906, Loss: 0.073929
+Epoch: [50/300] Iter:[120/148], Time: 0.3354, lr: 0.0004853578866459429, Loss: 0.070707
+Epoch: [50/300] Iter:[130/148], Time: 0.3348, lr: 0.00048529417836107314, Loss: 0.082429
+Epoch: [50/300] Iter:[140/148], Time: 0.3344, lr: 0.00048523041186854243, Loss: 0.089805
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 51
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best51
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best50
+Saving checkpoint at step: 51
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint51
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint50
+Loss: 0.967, Mean Accuracy:  0.7883, Best Accuracy:  0.7883
+Epoch: [51/300] Iter:[0/148], Time: 0.8309, lr: 0.0004851793055422604, Loss: 0.051018
+Epoch: [51/300] Iter:[10/148], Time: 0.3726, lr: 0.0004851152771152556, Loss: 0.129819
+Epoch: [51/300] Iter:[20/148], Time: 0.3514, lr: 0.0004850511613767594, Loss: 0.058987
+Epoch: [51/300] Iter:[30/148], Time: 0.3437, lr: 0.00048498681280761957, Loss: 0.240448
+Epoch: [51/300] Iter:[40/148], Time: 0.3398, lr: 0.0004849224060308188, Loss: 0.079118
+Epoch: [51/300] Iter:[50/148], Time: 0.3373, lr: 0.0004848578537348658, Loss: 0.121477
+Epoch: [51/300] Iter:[60/148], Time: 0.3357, lr: 0.00048479315591976047, Loss: 0.077556
+Epoch: [51/300] Iter:[70/148], Time: 0.3346, lr: 0.0004847283707931638, Loss: 0.267264
+Epoch: [51/300] Iter:[80/148], Time: 0.3338, lr: 0.0004846633819397539, Loss: 0.172073
+Epoch: [51/300] Iter:[90/148], Time: 0.3330, lr: 0.00048459830577485263, Loss: 0.204496
+Epoch: [51/300] Iter:[100/148], Time: 0.3325, lr: 0.0004845330840907991, Loss: 0.070970
+Epoch: [51/300] Iter:[110/148], Time: 0.3321, lr: 0.00048446771688759327, Loss: 0.026381
+Epoch: [51/300] Iter:[120/148], Time: 0.3318, lr: 0.0004844022332690656, Loss: 0.143511
+Epoch: [51/300] Iter:[130/148], Time: 0.3316, lr: 0.0004843366041313857, Loss: 0.158055
+Epoch: [51/300] Iter:[140/148], Time: 0.3313, lr: 0.0004842708585783839, Loss: 0.084721
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 52
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint52
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint51
+Loss: 0.965, Mean Accuracy:  0.7804, Best Accuracy:  0.7883
+Epoch: [52/300] Iter:[0/148], Time: 0.7892, lr: 0.00048421818064525723, Loss: 0.038223
+Epoch: [52/300] Iter:[10/148], Time: 0.3688, lr: 0.0004841521440539509, Loss: 0.115553
+Epoch: [52/300] Iter:[20/148], Time: 0.3491, lr: 0.0004840860201511532, Loss: 0.120802
+Epoch: [52/300] Iter:[30/148], Time: 0.3419, lr: 0.0004840197798330337, Loss: 0.112611
+Epoch: [52/300] Iter:[40/148], Time: 0.3384, lr: 0.00048395339399576187, Loss: 0.074647
+Epoch: [52/300] Iter:[50/148], Time: 0.3361, lr: 0.0004838868335355073, Loss: 0.147814
+Epoch: [52/300] Iter:[60/148], Time: 0.3347, lr: 0.0004838201857637614, Loss: 0.066556
+Epoch: [52/300] Iter:[70/148], Time: 0.3337, lr: 0.0004837533924728632, Loss: 0.043786
+Epoch: [52/300] Iter:[80/148], Time: 0.3330, lr: 0.0004836864536628127, Loss: 0.048875
+Epoch: [52/300] Iter:[90/148], Time: 0.3324, lr: 0.00048361942754127085, Loss: 0.116704
+Epoch: [52/300] Iter:[100/148], Time: 0.3320, lr: 0.0004835521976929158, Loss: 0.104383
+Epoch: [52/300] Iter:[110/148], Time: 0.3316, lr: 0.00048348488053306937, Loss: 0.108350
+Epoch: [52/300] Iter:[120/148], Time: 0.3313, lr: 0.00048341741785407066, Loss: 0.074517
+Epoch: [52/300] Iter:[130/148], Time: 0.3310, lr: 0.00048334980965591967, Loss: 0.071683
+Epoch: [52/300] Iter:[140/148], Time: 0.3309, lr: 0.0004832821141462773, Loss: 0.091438
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 53
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint53
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint52
+Loss: 1.043, Mean Accuracy:  0.7858, Best Accuracy:  0.7883
+Epoch: [53/300] Iter:[0/148], Time: 0.8026, lr: 0.0004832278355024755, Loss: 0.183047
+Epoch: [53/300] Iter:[10/148], Time: 0.3705, lr: 0.0004831599071621895, Loss: 0.120929
+Epoch: [53/300] Iter:[20/148], Time: 0.3498, lr: 0.0004830918041989207, Loss: 0.181282
+Epoch: [53/300] Iter:[30/148], Time: 0.3425, lr: 0.0004830235557164997, Loss: 0.102716
+Epoch: [53/300] Iter:[40/148], Time: 0.3387, lr: 0.0004829552199225873, Loss: 0.128408
+Epoch: [53/300] Iter:[50/148], Time: 0.3366, lr: 0.0004828867095056921, Loss: 0.046906
+Epoch: [53/300] Iter:[60/148], Time: 0.3350, lr: 0.00048281808267347515, Loss: 0.128522
+Epoch: [53/300] Iter:[70/148], Time: 0.3340, lr: 0.00048274933942593634, Loss: 0.093171
+Epoch: [53/300] Iter:[80/148], Time: 0.3331, lr: 0.0004826804215554148, Loss: 0.092420
+Epoch: [53/300] Iter:[90/148], Time: 0.3326, lr: 0.00048261144547723234, Loss: 0.047148
+Epoch: [53/300] Iter:[100/148], Time: 0.3321, lr: 0.0004825422656722367, Loss: 0.106596
+Epoch: [53/300] Iter:[110/148], Time: 0.3318, lr: 0.0004824729694519192, Loss: 0.063746
+Epoch: [53/300] Iter:[120/148], Time: 0.3315, lr: 0.00048240352771244943, Loss: 0.116129
+Epoch: [53/300] Iter:[130/148], Time: 0.3312, lr: 0.0004823339986614883, Loss: 0.138628
+Epoch: [53/300] Iter:[140/148], Time: 0.3310, lr: 0.0004822643240913749, Loss: 0.166840
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 54
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best54
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best51
+Saving checkpoint at step: 54
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint54
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint53
+Loss: 0.924, Mean Accuracy:  0.7950, Best Accuracy:  0.7950
+Epoch: [54/300] Iter:[0/148], Time: 1.2631, lr: 0.0004822084738407284, Loss: 0.028763
+Epoch: [54/300] Iter:[10/148], Time: 0.4121, lr: 0.00048213856643997133, Loss: 0.131772
+Epoch: [54/300] Iter:[20/148], Time: 0.3720, lr: 0.0004820685426238924, Loss: 0.093588
+Epoch: [54/300] Iter:[30/148], Time: 0.3575, lr: 0.00048199831508100033, Loss: 0.103879
+Epoch: [54/300] Iter:[40/148], Time: 0.3502, lr: 0.00048192800022661686, Loss: 0.079395
+Epoch: [54/300] Iter:[50/148], Time: 0.3455, lr: 0.00048185756895691156, Loss: 0.200912
+Epoch: [54/300] Iter:[60/148], Time: 0.3426, lr: 0.000481786992168054, Loss: 0.032957
+Epoch: [54/300] Iter:[70/148], Time: 0.3403, lr: 0.0004817162698600441, Loss: 0.063589
+Epoch: [54/300] Iter:[80/148], Time: 0.3388, lr: 0.00048164543113671243, Loss: 0.201756
+Epoch: [54/300] Iter:[90/148], Time: 0.3374, lr: 0.0004815744759980589, Loss: 0.127263
+Epoch: [54/300] Iter:[100/148], Time: 0.3365, lr: 0.00048150334623642266, Loss: 0.137934
+Epoch: [54/300] Iter:[110/148], Time: 0.3357, lr: 0.0004814321000594646, Loss: 0.054324
+Epoch: [54/300] Iter:[120/148], Time: 0.3350, lr: 0.00048136073746718466, Loss: 0.181869
+Epoch: [54/300] Iter:[130/148], Time: 0.3344, lr: 0.00048128922935575247, Loss: 0.090629
+Epoch: [54/300] Iter:[140/148], Time: 0.3340, lr: 0.00048121760482899845, Loss: 0.234692
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 55
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint55
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint54
+Loss: 1.018, Mean Accuracy:  0.7825, Best Accuracy:  0.7950
+Epoch: [55/300] Iter:[0/148], Time: 0.8249, lr: 0.00048116021207533777, Loss: 0.086632
+Epoch: [55/300] Iter:[10/148], Time: 0.3723, lr: 0.0004810883547179401, Loss: 0.237846
+Epoch: [55/300] Iter:[20/148], Time: 0.3506, lr: 0.0004810163227375597, Loss: 0.212216
+Epoch: [55/300] Iter:[30/148], Time: 0.3432, lr: 0.0004809442034456879, Loss: 0.050113
+Epoch: [55/300] Iter:[40/148], Time: 0.3394, lr: 0.0004808719386346638, Loss: 0.059860
+Epoch: [55/300] Iter:[50/148], Time: 0.3373, lr: 0.0004807995865121484, Loss: 0.145714
+Epoch: [55/300] Iter:[60/148], Time: 0.3356, lr: 0.0004807270015589893, Loss: 0.128953
+Epoch: [55/300] Iter:[70/148], Time: 0.3345, lr: 0.0004806543583981693, Loss: 0.077930
+Epoch: [55/300] Iter:[80/148], Time: 0.3337, lr: 0.00048058159882202744, Loss: 0.099676
+Epoch: [55/300] Iter:[90/148], Time: 0.3331, lr: 0.0004805086355190724, Loss: 0.078561
+Epoch: [55/300] Iter:[100/148], Time: 0.3325, lr: 0.00048043561400845647, Loss: 0.095509
+Epoch: [55/300] Iter:[110/148], Time: 0.3322, lr: 0.00048036244697868824, Loss: 0.251923
+Epoch: [55/300] Iter:[120/148], Time: 0.3318, lr: 0.00048028913442976773, Loss: 0.066919
+Epoch: [55/300] Iter:[130/148], Time: 0.3315, lr: 0.0004802157054655254, Loss: 0.130900
+Epoch: [55/300] Iter:[140/148], Time: 0.3312, lr: 0.0004801421018783003, Loss: 0.086556
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 56
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint56
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint55
+Loss: 1.004, Mean Accuracy:  0.7855, Best Accuracy:  0.7950
+Epoch: [56/300] Iter:[0/148], Time: 1.1674, lr: 0.00048008313751779497, Loss: 0.047481
+Epoch: [56/300] Iter:[10/148], Time: 0.4028, lr: 0.0004800093302037567, Loss: 0.102777
+Epoch: [56/300] Iter:[20/148], Time: 0.3672, lr: 0.0004799354064743966, Loss: 0.042078
+Epoch: [56/300] Iter:[30/148], Time: 0.3546, lr: 0.0004798613372258842, Loss: 0.053919
+Epoch: [56/300] Iter:[40/148], Time: 0.3479, lr: 0.00047978712245821953, Loss: 0.123931
+Epoch: [56/300] Iter:[50/148], Time: 0.3439, lr: 0.0004797128203790635, Loss: 0.080019
+Epoch: [56/300] Iter:[60/148], Time: 0.3413, lr: 0.0004796383436769247, Loss: 0.046075
+Epoch: [56/300] Iter:[70/148], Time: 0.3394, lr: 0.00047956377966329455, Loss: 0.340562
+Epoch: [56/300] Iter:[80/148], Time: 0.3380, lr: 0.0004794890119228512, Loss: 0.226276
+Epoch: [56/300] Iter:[90/148], Time: 0.3369, lr: 0.0004794141568709165, Loss: 0.274573
+Epoch: [56/300] Iter:[100/148], Time: 0.3360, lr: 0.00047933918540365994, Loss: 0.037364
+Epoch: [56/300] Iter:[110/148], Time: 0.3351, lr: 0.00047926403931342065, Loss: 0.116111
+Epoch: [56/300] Iter:[120/148], Time: 0.3346, lr: 0.00047918883501552045, Loss: 0.103297
+Epoch: [56/300] Iter:[130/148], Time: 0.3340, lr: 0.0004791134560946375, Loss: 0.102904
+Epoch: [56/300] Iter:[140/148], Time: 0.3336, lr: 0.0004790379316546023, Loss: 0.139416
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 57
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint57
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint56
+Loss: 1.037, Mean Accuracy:  0.7782, Best Accuracy:  0.7950
+Epoch: [57/300] Iter:[0/148], Time: 0.8503, lr: 0.00047897742479108274, Loss: 0.119629
+Epoch: [57/300] Iter:[10/148], Time: 0.3746, lr: 0.0004789016966242343, Loss: 0.092837
+Epoch: [57/300] Iter:[20/148], Time: 0.3524, lr: 0.0004788258229382336, Loss: 0.091202
+Epoch: [57/300] Iter:[30/148], Time: 0.3444, lr: 0.0004787498328369111, Loss: 0.014433
+Epoch: [57/300] Iter:[40/148], Time: 0.3406, lr: 0.00047867369721643627, Loss: 0.053984
+Epoch: [57/300] Iter:[50/148], Time: 0.3379, lr: 0.00047859741607680917, Loss: 0.087117
+Epoch: [57/300] Iter:[60/148], Time: 0.3362, lr: 0.0004785210476256907, Loss: 0.126429
+Epoch: [57/300] Iter:[70/148], Time: 0.3350, lr: 0.00047844453365541995, Loss: 0.139961
+Epoch: [57/300] Iter:[80/148], Time: 0.3341, lr: 0.0004783678741659969, Loss: 0.053187
+Epoch: [57/300] Iter:[90/148], Time: 0.3333, lr: 0.0004782911273650825, Loss: 0.067241
+Epoch: [57/300] Iter:[100/148], Time: 0.3328, lr: 0.00047821420594118536, Loss: 0.023716
+Epoch: [57/300] Iter:[110/148], Time: 0.3324, lr: 0.0004781371681019664, Loss: 0.087526
+Epoch: [57/300] Iter:[120/148], Time: 0.3321, lr: 0.0004780599847435951, Loss: 0.066319
+Epoch: [57/300] Iter:[130/148], Time: 0.3317, lr: 0.0004779826558660716, Loss: 0.223123
+Epoch: [57/300] Iter:[140/148], Time: 0.3315, lr: 0.0004779052687808871, Loss: 0.252921
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 58
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint58
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint57
+Loss: 1.033, Mean Accuracy:  0.7809, Best Accuracy:  0.7950
+Epoch: [58/300] Iter:[0/148], Time: 0.8126, lr: 0.00047784324851818383, Loss: 0.138940
+Epoch: [58/300] Iter:[10/148], Time: 0.3715, lr: 0.00047776554129086435, Loss: 0.120447
+Epoch: [58/300] Iter:[20/148], Time: 0.3508, lr: 0.0004776877467520535, Loss: 0.244744
+Epoch: [58/300] Iter:[30/148], Time: 0.3434, lr: 0.0004776098649017513, Loss: 0.165296
+Epoch: [58/300] Iter:[40/148], Time: 0.3393, lr: 0.00047753177932463586, Loss: 0.080402
+Epoch: [58/300] Iter:[50/148], Time: 0.3371, lr: 0.0004774536064360291, Loss: 0.188100
+Epoch: [58/300] Iter:[60/148], Time: 0.3355, lr: 0.00047737528802827, Loss: 0.090606
+Epoch: [58/300] Iter:[70/148], Time: 0.3345, lr: 0.00047729688230901957, Loss: 0.015850
+Epoch: [58/300] Iter:[80/148], Time: 0.3336, lr: 0.0004772183019667864, Loss: 0.117614
+Epoch: [58/300] Iter:[90/148], Time: 0.3329, lr: 0.0004771396052092314, Loss: 0.086802
+Epoch: [58/300] Iter:[100/148], Time: 0.3324, lr: 0.00047706079203635454, Loss: 0.253458
+Epoch: [58/300] Iter:[110/148], Time: 0.3320, lr: 0.0004769818333443254, Loss: 0.080250
+Epoch: [58/300] Iter:[120/148], Time: 0.3316, lr: 0.0004769027582369745, Loss: 0.150183
+Epoch: [58/300] Iter:[130/148], Time: 0.3313, lr: 0.00047682353761047125, Loss: 0.162168
+Epoch: [58/300] Iter:[140/148], Time: 0.3310, lr: 0.0004767442005686462, Loss: 0.142971
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 59
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint59
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint58
+Loss: 1.008, Mean Accuracy:  0.7802, Best Accuracy:  0.7950
+Epoch: [59/300] Iter:[0/148], Time: 0.7976, lr: 0.00047668066690675914, Loss: 0.103861
+Epoch: [59/300] Iter:[10/148], Time: 0.3704, lr: 0.00047660106793046, Loss: 0.050201
+Epoch: [59/300] Iter:[20/148], Time: 0.3496, lr: 0.000476521352538839, Loss: 0.093930
+Epoch: [59/300] Iter:[30/148], Time: 0.3426, lr: 0.0004764415498357266, Loss: 0.082415
+Epoch: [59/300] Iter:[40/148], Time: 0.3387, lr: 0.0004763615725096315, Loss: 0.195228
+Epoch: [59/300] Iter:[50/148], Time: 0.3367, lr: 0.0004762814496643841, Loss: 0.176205
+Epoch: [59/300] Iter:[60/148], Time: 0.3352, lr: 0.0004762012686114758, Loss: 0.146705
+Epoch: [59/300] Iter:[70/148], Time: 0.3342, lr: 0.0004761208838317543, Loss: 0.288815
+Epoch: [59/300] Iter:[80/148], Time: 0.3334, lr: 0.00047604046994820237, Loss: 0.084040
+Epoch: [59/300] Iter:[90/148], Time: 0.3328, lr: 0.0004759598523378372, Loss: 0.060648
+Epoch: [59/300] Iter:[100/148], Time: 0.3323, lr: 0.0004758790892083198, Loss: 0.081765
+Epoch: [59/300] Iter:[110/148], Time: 0.3320, lr: 0.000475798238767311, Loss: 0.096152
+Epoch: [59/300] Iter:[120/148], Time: 0.3316, lr: 0.00047571727191098034, Loss: 0.027992
+Epoch: [59/300] Iter:[130/148], Time: 0.3313, lr: 0.0004756361595354974, Loss: 0.102288
+Epoch: [59/300] Iter:[140/148], Time: 0.3311, lr: 0.0004755549016408622, Loss: 0.079808
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 60
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint60
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint59
+Loss: 1.056, Mean Accuracy:  0.7807, Best Accuracy:  0.7950
+Epoch: [60/300] Iter:[0/148], Time: 0.8054, lr: 0.0004754897963721305, Loss: 0.039889
+Epoch: [60/300] Iter:[10/148], Time: 0.3701, lr: 0.00047540836385451257, Loss: 0.028126
+Epoch: [60/300] Iter:[20/148], Time: 0.3504, lr: 0.0004753267567139119, Loss: 0.115958
+Epoch: [60/300] Iter:[30/148], Time: 0.3432, lr: 0.0004752450331579894, Loss: 0.022245
+Epoch: [60/300] Iter:[40/148], Time: 0.3396, lr: 0.0004751631640829146, Loss: 0.048059
+Epoch: [60/300] Iter:[50/148], Time: 0.3373, lr: 0.00047508117859251797, Loss: 0.065093
+Epoch: [60/300] Iter:[60/148], Time: 0.3357, lr: 0.0004749990766867995, Loss: 0.033566
+Epoch: [60/300] Iter:[70/148], Time: 0.3345, lr: 0.0004749168292619288, Loss: 0.056496
+Epoch: [60/300] Iter:[80/148], Time: 0.3337, lr: 0.0004748344363179058, Loss: 0.022678
+Epoch: [60/300] Iter:[90/148], Time: 0.3330, lr: 0.0004747519560623914, Loss: 0.077881
+Epoch: [60/300] Iter:[100/148], Time: 0.3325, lr: 0.0004746693011838943, Loss: 0.043431
+Epoch: [60/300] Iter:[110/148], Time: 0.3321, lr: 0.0004745865298900753, Loss: 0.029833
+Epoch: [60/300] Iter:[120/148], Time: 0.3318, lr: 0.00047450370038859546, Loss: 0.095723
+Epoch: [60/300] Iter:[130/148], Time: 0.3315, lr: 0.00047442069626413286, Loss: 0.050839
+Epoch: [60/300] Iter:[140/148], Time: 0.3312, lr: 0.00047433754662051797, Loss: 0.006797
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 61
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best61
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/best54
+Saving checkpoint at step: 61
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint61
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint60
+Loss: 0.926, Mean Accuracy:  0.8037, Best Accuracy:  0.8037
+Epoch: [61/300] Iter:[0/148], Time: 0.8060, lr: 0.00047427089884877205, Loss: 0.036347
+Epoch: [61/300] Iter:[10/148], Time: 0.3716, lr: 0.0004741876036860049, Loss: 0.079665
+Epoch: [61/300] Iter:[20/148], Time: 0.3508, lr: 0.0004741041047964245, Loss: 0.038550
+Epoch: [61/300] Iter:[30/148], Time: 0.3432, lr: 0.0004740204312838614, Loss: 0.092555
+Epoch: [61/300] Iter:[40/148], Time: 0.3393, lr: 0.0004739366995636374, Loss: 0.066873
+Epoch: [61/300] Iter:[50/148], Time: 0.3370, lr: 0.00047385282232426107, Loss: 0.021669
+Epoch: [61/300] Iter:[60/148], Time: 0.3354, lr: 0.0004737688577733934, Loss: 0.145126
+Epoch: [61/300] Iter:[70/148], Time: 0.3344, lr: 0.000473684718599543, Loss: 0.130297
+Epoch: [61/300] Iter:[80/148], Time: 0.3336, lr: 0.00047360046301037073, Loss: 0.078183
+Epoch: [61/300] Iter:[90/148], Time: 0.3330, lr: 0.0004735160619020462, Loss: 0.086724
+Epoch: [61/300] Iter:[100/148], Time: 0.3325, lr: 0.0004734315734822303, Loss: 0.064755
+Epoch: [61/300] Iter:[110/148], Time: 0.3320, lr: 0.00047334691043943167, Loss: 0.090603
+Epoch: [61/300] Iter:[120/148], Time: 0.3317, lr: 0.00047326216008514166, Loss: 0.041804
+Epoch: [61/300] Iter:[130/148], Time: 0.3315, lr: 0.0004731772351078689, Loss: 0.212383
+Epoch: [61/300] Iter:[140/148], Time: 0.3312, lr: 0.00047309225192293525, Loss: 0.095485
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 62
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint62
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint61
+Loss: 1.134, Mean Accuracy:  0.7704, Best Accuracy:  0.8037
+Epoch: [62/300] Iter:[0/148], Time: 0.7926, lr: 0.00047302411985583603, Loss: 0.195440
+Epoch: [62/300] Iter:[10/148], Time: 0.3700, lr: 0.0004729389038402587, Loss: 0.299259
+Epoch: [62/300] Iter:[20/148], Time: 0.3499, lr: 0.0004728535423055291, Loss: 0.163196
+Epoch: [62/300] Iter:[30/148], Time: 0.3429, lr: 0.00047276803525164723, Loss: 0.088696
+Epoch: [62/300] Iter:[40/148], Time: 0.3392, lr: 0.0004726824117824435, Loss: 0.097621
+Epoch: [62/300] Iter:[50/148], Time: 0.3370, lr: 0.000472596671897918, Loss: 0.117818
+Epoch: [62/300] Iter:[60/148], Time: 0.3355, lr: 0.0004725107573904097, Loss: 0.141226
+Epoch: [62/300] Iter:[70/148], Time: 0.3343, lr: 0.00047242475557141006, Loss: 0.168058
+Epoch: [62/300] Iter:[80/148], Time: 0.3334, lr: 0.00047233860823325813, Loss: 0.099638
+Epoch: [62/300] Iter:[90/148], Time: 0.3328, lr: 0.0004722523735836148, Loss: 0.051971
+Epoch: [62/300] Iter:[100/148], Time: 0.3322, lr: 0.0004721659643109888, Loss: 0.056140
+Epoch: [62/300] Iter:[110/148], Time: 0.3320, lr: 0.0004720794386230409, Loss: 0.175707
+Epoch: [62/300] Iter:[120/148], Time: 0.3316, lr: 0.00047199285472743213, Loss: 0.110528
+Epoch: [62/300] Iter:[130/148], Time: 0.3314, lr: 0.0004719060962088406, Loss: 0.105274
+Epoch: [62/300] Iter:[140/148], Time: 0.3311, lr: 0.00047181916306726635, Loss: 0.130521
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 63
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint63
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint62
+Loss: 1.013, Mean Accuracy:  0.7878, Best Accuracy:  0.8037
+Epoch: [63/300] Iter:[0/148], Time: 0.7822, lr: 0.00047174960491247475, Loss: 0.099679
+Epoch: [63/300] Iter:[10/148], Time: 0.3689, lr: 0.00047166249714791775, Loss: 0.183792
+Epoch: [63/300] Iter:[20/148], Time: 0.3500, lr: 0.000471575214760378, Loss: 0.127163
+Epoch: [63/300] Iter:[30/148], Time: 0.3428, lr: 0.0004714878450613469, Loss: 0.033737
+Epoch: [63/300] Iter:[40/148], Time: 0.3392, lr: 0.0004714003298431635, Loss: 0.034016
+Epoch: [63/300] Iter:[50/148], Time: 0.3369, lr: 0.0004713127564173192, Loss: 0.126667
+Epoch: [63/300] Iter:[60/148], Time: 0.3355, lr: 0.0004712250083684921, Loss: 0.120506
+Epoch: [63/300] Iter:[70/148], Time: 0.3343, lr: 0.0004711371148005128, Loss: 0.084238
+Epoch: [63/300] Iter:[80/148], Time: 0.3336, lr: 0.00047104910481721163, Loss: 0.026101
+Epoch: [63/300] Iter:[90/148], Time: 0.3330, lr: 0.0004709610075224191, Loss: 0.087451
+Epoch: [63/300] Iter:[100/148], Time: 0.3325, lr: 0.0004708727647084743, Loss: 0.144652
+Epoch: [63/300] Iter:[110/148], Time: 0.3320, lr: 0.0004707843763753772, Loss: 0.113319
+Epoch: [63/300] Iter:[120/148], Time: 0.3317, lr: 0.00047069587162695825, Loss: 0.103843
+Epoch: [63/300] Iter:[130/148], Time: 0.3314, lr: 0.0004706072504632175, Loss: 0.102043
+Epoch: [63/300] Iter:[140/148], Time: 0.3312, lr: 0.00047051848378032446, Loss: 0.051602
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 64
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint64
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint63
+Loss: 1.013, Mean Accuracy:  0.7886, Best Accuracy:  0.8037
+Epoch: [64/300] Iter:[0/148], Time: 0.9005, lr: 0.0004704474122263491, Loss: 0.072543
+Epoch: [64/300] Iter:[10/148], Time: 0.3791, lr: 0.0004703584418166429, Loss: 0.092507
+Epoch: [64/300] Iter:[20/148], Time: 0.3544, lr: 0.0004702693549916148, Loss: 0.108798
+Epoch: [64/300] Iter:[30/148], Time: 0.3457, lr: 0.0004701801226474345, Loss: 0.160607
+Epoch: [64/300] Iter:[40/148], Time: 0.3413, lr: 0.0004700907738879323, Loss: 0.101063
+Epoch: [64/300] Iter:[50/148], Time: 0.3386, lr: 0.0004700013087131083, Loss: 0.174734
+Epoch: [64/300] Iter:[60/148], Time: 0.3368, lr: 0.000469911698019132, Loss: 0.086476
+Epoch: [64/300] Iter:[70/148], Time: 0.3355, lr: 0.00046982194180600345, Loss: 0.050475
+Epoch: [64/300] Iter:[80/148], Time: 0.3346, lr: 0.00046973212738521397, Loss: 0.104412
+Epoch: [64/300] Iter:[90/148], Time: 0.3339, lr: 0.00046964213834144175, Loss: 0.105312
+Epoch: [64/300] Iter:[100/148], Time: 0.3333, lr: 0.00046955206198617816, Loss: 0.070253
+Epoch: [64/300] Iter:[110/148], Time: 0.3328, lr: 0.00046946178190410137, Loss: 0.088746
+Epoch: [64/300] Iter:[120/148], Time: 0.3324, lr: 0.0004693714727181941, Loss: 0.026060
+Epoch: [64/300] Iter:[130/148], Time: 0.3321, lr: 0.00046928098890930414, Loss: 0.017727
+Epoch: [64/300] Iter:[140/148], Time: 0.3317, lr: 0.00046919038868509233, Loss: 0.055829
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 65
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint65
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint64
+Loss: 1.018, Mean Accuracy:  0.7892, Best Accuracy:  0.8037
+Epoch: [65/300] Iter:[0/148], Time: 0.8059, lr: 0.00046911780373193324, Loss: 0.034815
+Epoch: [65/300] Iter:[10/148], Time: 0.3701, lr: 0.0004690269997809082, Loss: 0.078936
+Epoch: [65/300] Iter:[20/148], Time: 0.3502, lr: 0.0004689360794145614, Loss: 0.045591
+Epoch: [65/300] Iter:[30/148], Time: 0.3427, lr: 0.0004688449844252318, Loss: 0.060250
+Epoch: [65/300] Iter:[40/148], Time: 0.3392, lr: 0.0004687537730205804, Loss: 0.112734
+Epoch: [65/300] Iter:[50/148], Time: 0.3368, lr: 0.0004686624452006072, Loss: 0.088737
+Epoch: [65/300] Iter:[60/148], Time: 0.3354, lr: 0.0004685710009653121, Loss: 0.086339
+Epoch: [65/300] Iter:[70/148], Time: 0.3343, lr: 0.00046847944031469524, Loss: 0.071638
+Epoch: [65/300] Iter:[80/148], Time: 0.3334, lr: 0.00046838773414492607, Loss: 0.095467
+Epoch: [65/300] Iter:[90/148], Time: 0.3327, lr: 0.00046829594066366553, Loss: 0.120585
+Epoch: [65/300] Iter:[100/148], Time: 0.3322, lr: 0.0004682040016632527, Loss: 0.099445
+Epoch: [65/300] Iter:[110/148], Time: 0.3318, lr: 0.00046811194624751806, Loss: 0.159748
+Epoch: [65/300] Iter:[120/148], Time: 0.3315, lr: 0.00046801974531263113, Loss: 0.121576
+Epoch: [65/300] Iter:[130/148], Time: 0.3313, lr: 0.00046792742796242237, Loss: 0.119016
+Epoch: [65/300] Iter:[140/148], Time: 0.3310, lr: 0.0004678349941968918, Loss: 0.052023
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 66
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint66
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint65
+Loss: 1.029, Mean Accuracy:  0.7890, Best Accuracy:  0.8037
+Epoch: [66/300] Iter:[0/148], Time: 0.7999, lr: 0.0004677609831560403, Loss: 0.158716
+Epoch: [66/300] Iter:[10/148], Time: 0.3705, lr: 0.0004676682874560356, Loss: 0.093194
+Epoch: [66/300] Iter:[20/148], Time: 0.3503, lr: 0.00046757550444453955, Loss: 0.063784
+Epoch: [66/300] Iter:[30/148], Time: 0.3430, lr: 0.00046748260501772165, Loss: 0.122393
+Epoch: [66/300] Iter:[40/148], Time: 0.3394, lr: 0.00046738958917558193, Loss: 0.412946
+Epoch: [66/300] Iter:[50/148], Time: 0.3371, lr: 0.00046729642781428993, Loss: 0.170729
+Epoch: [66/300] Iter:[60/148], Time: 0.3358, lr: 0.0004672031500376761, Loss: 0.037800
+Epoch: [66/300] Iter:[70/148], Time: 0.3346, lr: 0.00046710975584574044, Loss: 0.198906
+Epoch: [66/300] Iter:[80/148], Time: 0.3338, lr: 0.0004670162161346525, Loss: 0.025657
+Epoch: [66/300] Iter:[90/148], Time: 0.3332, lr: 0.0004669225600082427, Loss: 0.148040
+Epoch: [66/300] Iter:[100/148], Time: 0.3327, lr: 0.0004668288165703416, Loss: 0.222129
+Epoch: [66/300] Iter:[110/148], Time: 0.3322, lr: 0.00046673492761328816, Loss: 0.093781
+Epoch: [66/300] Iter:[120/148], Time: 0.3318, lr: 0.0004666409222409129, Loss: 0.437623
+Epoch: [66/300] Iter:[130/148], Time: 0.3315, lr: 0.0004665467422455549, Loss: 0.089769
+Epoch: [66/300] Iter:[140/148], Time: 0.3313, lr: 0.000466452504042536, Loss: 0.194996
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 67
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint67
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint66
+Loss: 1.063, Mean Accuracy:  0.7739, Best Accuracy:  0.8037
+Epoch: [67/300] Iter:[0/148], Time: 0.7919, lr: 0.0004663769796025008, Loss: 0.085597
+Epoch: [67/300] Iter:[10/148], Time: 0.3693, lr: 0.00046628250856883824, Loss: 0.177902
+Epoch: [67/300] Iter:[20/148], Time: 0.3496, lr: 0.00046618792111985385, Loss: 0.185454
+Epoch: [67/300] Iter:[30/148], Time: 0.3425, lr: 0.00046609315904788673, Loss: 0.065826
+Epoch: [67/300] Iter:[40/148], Time: 0.3391, lr: 0.00046599830966442823, Loss: 0.096370
+Epoch: [67/300] Iter:[50/148], Time: 0.3368, lr: 0.0004659033438656479, Loss: 0.063915
+Epoch: [67/300] Iter:[60/148], Time: 0.3352, lr: 0.00046580826165154576, Loss: 0.025347
+Epoch: [67/300] Iter:[70/148], Time: 0.3343, lr: 0.0004657130048144609, Loss: 0.080869
+Epoch: [67/300] Iter:[80/148], Time: 0.3334, lr: 0.0004656176606658846, Loss: 0.021684
+Epoch: [67/300] Iter:[90/148], Time: 0.3328, lr: 0.000465522229205817, Loss: 0.073011
+Epoch: [67/300] Iter:[100/148], Time: 0.3323, lr: 0.00046542665222659707, Loss: 0.110207
+Epoch: [67/300] Iter:[110/148], Time: 0.3319, lr: 0.00046533095883205533, Loss: 0.068690
+Epoch: [67/300] Iter:[120/148], Time: 0.3316, lr: 0.0004652351199183613, Loss: 0.025805
+Epoch: [67/300] Iter:[130/148], Time: 0.3313, lr: 0.000465139135485515, Loss: 0.106627
+Epoch: [67/300] Iter:[140/148], Time: 0.3312, lr: 0.00046504303463734686, Loss: 0.044080
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 68
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint68
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint67
+Loss: 1.006, Mean Accuracy:  0.7867, Best Accuracy:  0.8037
+Epoch: [68/300] Iter:[0/148], Time: 1.1590, lr: 0.00046496608410961926, Loss: 0.046387
+Epoch: [68/300] Iter:[10/148], Time: 0.4028, lr: 0.0004648698086384684, Loss: 0.212416
+Epoch: [68/300] Iter:[20/148], Time: 0.3671, lr: 0.0004647733876481652, Loss: 0.038689
+Epoch: [68/300] Iter:[30/148], Time: 0.3546, lr: 0.0004646768211387098, Loss: 0.077939
+Epoch: [68/300] Iter:[40/148], Time: 0.3480, lr: 0.00046458016731776297, Loss: 0.076126
+Epoch: [68/300] Iter:[50/148], Time: 0.3442, lr: 0.00046448339708149433, Loss: 0.107649
+Epoch: [68/300] Iter:[60/148], Time: 0.3413, lr: 0.00046438651042990386, Loss: 0.143379
+Epoch: [68/300] Iter:[70/148], Time: 0.3394, lr: 0.00046428944915533066, Loss: 0.053863
+Epoch: [68/300] Iter:[80/148], Time: 0.3380, lr: 0.0004641923005692661, Loss: 0.057703
+Epoch: [68/300] Iter:[90/148], Time: 0.3370, lr: 0.0004640950355678797, Loss: 0.010728
+Epoch: [68/300] Iter:[100/148], Time: 0.3361, lr: 0.000463997625047341, Loss: 0.020948
+Epoch: [68/300] Iter:[110/148], Time: 0.3354, lr: 0.00046390012721531093, Loss: 0.138793
+Epoch: [68/300] Iter:[120/148], Time: 0.3348, lr: 0.00046380251296795905, Loss: 0.071457
+Epoch: [68/300] Iter:[130/148], Time: 0.3343, lr: 0.0004637047240976244, Loss: 0.072465
+Epoch: [68/300] Iter:[140/148], Time: 0.3338, lr: 0.0004636068479157984, Loss: 0.070424
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 69
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint69
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint68
+Loss: 0.988, Mean Accuracy:  0.7888, Best Accuracy:  0.8037
+Epoch: [69/300] Iter:[0/148], Time: 1.1048, lr: 0.000463528442196548, Loss: 0.077892
+Epoch: [69/300] Iter:[10/148], Time: 0.3977, lr: 0.00046343039139173925, Loss: 0.130815
+Epoch: [69/300] Iter:[20/148], Time: 0.3640, lr: 0.0004633321368601173, Loss: 0.075322
+Epoch: [69/300] Iter:[30/148], Time: 0.3526, lr: 0.00046323382412083447, Loss: 0.073102
+Epoch: [69/300] Iter:[40/148], Time: 0.3466, lr: 0.00046313536586239934, Loss: 0.025197
+Epoch: [69/300] Iter:[50/148], Time: 0.3429, lr: 0.0004630367620848119, Loss: 0.063204
+Epoch: [69/300] Iter:[60/148], Time: 0.3405, lr: 0.0004629381000995636, Loss: 0.078208
+Epoch: [69/300] Iter:[70/148], Time: 0.3385, lr: 0.0004628392343875021, Loss: 0.033175
+Epoch: [69/300] Iter:[80/148], Time: 0.3371, lr: 0.0004627402813639492, Loss: 0.058129
+Epoch: [69/300] Iter:[90/148], Time: 0.3361, lr: 0.0004626412410289049, Loss: 0.043167
+Epoch: [69/300] Iter:[100/148], Time: 0.3353, lr: 0.00046254205517470837, Loss: 0.084180
+Epoch: [69/300] Iter:[110/148], Time: 0.3346, lr: 0.00046244272380135953, Loss: 0.124426
+Epoch: [69/300] Iter:[120/148], Time: 0.3340, lr: 0.0004623433342203498, Loss: 0.034056
+Epoch: [69/300] Iter:[130/148], Time: 0.3336, lr: 0.0004622437700163573, Loss: 0.077983
+Epoch: [69/300] Iter:[140/148], Time: 0.3332, lr: 0.000462144089397043, Loss: 0.022931
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 70
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint70
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint69
+Loss: 1.063, Mean Accuracy:  0.7885, Best Accuracy:  0.8037
+Epoch: [70/300] Iter:[0/148], Time: 1.2381, lr: 0.0004620642866939306, Loss: 0.025209
+Epoch: [70/300] Iter:[10/148], Time: 0.4095, lr: 0.0004619644023478031, Loss: 0.064607
+Epoch: [70/300] Iter:[20/148], Time: 0.3706, lr: 0.00046186434337869287, Loss: 0.028002
+Epoch: [70/300] Iter:[30/148], Time: 0.3566, lr: 0.0004617642262019217, Loss: 0.033116
+Epoch: [70/300] Iter:[40/148], Time: 0.3497, lr: 0.0004616639926098287, Loss: 0.058058
+Epoch: [70/300] Iter:[50/148], Time: 0.3453, lr: 0.00046156361349858344, Loss: 0.028610
+Epoch: [70/300] Iter:[60/148], Time: 0.3425, lr: 0.0004614631470758468, Loss: 0.084643
+Epoch: [70/300] Iter:[70/148], Time: 0.3404, lr: 0.0004613625642377883, Loss: 0.099215
+Epoch: [70/300] Iter:[80/148], Time: 0.3388, lr: 0.00046126183588057756, Loss: 0.098187
+Epoch: [70/300] Iter:[90/148], Time: 0.3376, lr: 0.000461160991108045, Loss: 0.056391
+Epoch: [70/300] Iter:[100/148], Time: 0.3366, lr: 0.0004610600008163601, Loss: 0.061123
+Epoch: [70/300] Iter:[110/148], Time: 0.3358, lr: 0.0004609589232131839, Loss: 0.106086
+Epoch: [70/300] Iter:[120/148], Time: 0.3351, lr: 0.00046085770009085536, Loss: 0.060909
+Epoch: [70/300] Iter:[130/148], Time: 0.3345, lr: 0.000460756360553205, Loss: 0.182293
+Epoch: [70/300] Iter:[140/148], Time: 0.3341, lr: 0.00046065490460023284, Loss: 0.137043
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 71
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint71
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint70
+Loss: 1.018, Mean Accuracy:  0.7984, Best Accuracy:  0.8037
+Epoch: [71/300] Iter:[0/148], Time: 0.8140, lr: 0.0004605736758094281, Loss: 0.041958
+Epoch: [71/300] Iter:[10/148], Time: 0.3711, lr: 0.0004604720161296427, Loss: 0.151105
+Epoch: [71/300] Iter:[20/148], Time: 0.3506, lr: 0.00046037024003453553, Loss: 0.209109
+Epoch: [71/300] Iter:[30/148], Time: 0.3433, lr: 0.0004602683475241065, Loss: 0.110873
+Epoch: [71/300] Iter:[40/148], Time: 0.3395, lr: 0.00046016633859835565, Loss: 0.305521
+Epoch: [71/300] Iter:[50/148], Time: 0.3370, lr: 0.0004600641841534525, Loss: 0.161794
+Epoch: [71/300] Iter:[60/148], Time: 0.3354, lr: 0.00045996191329322755, Loss: 0.250844
+Epoch: [71/300] Iter:[70/148], Time: 0.3343, lr: 0.0004598595551215112, Loss: 0.185198
+Epoch: [71/300] Iter:[80/148], Time: 0.3335, lr: 0.0004597570514306426, Loss: 0.055521
+Epoch: [71/300] Iter:[90/148], Time: 0.3329, lr: 0.0004596544022206217, Loss: 0.096418
+Epoch: [71/300] Iter:[100/148], Time: 0.3324, lr: 0.0004595516948029399, Loss: 0.131242
+Epoch: [71/300] Iter:[110/148], Time: 0.3320, lr: 0.0004594488418661058, Loss: 0.049893
+Epoch: [71/300] Iter:[120/148], Time: 0.3316, lr: 0.00045934587251394987, Loss: 0.066220
+Epoch: [71/300] Iter:[130/148], Time: 0.3313, lr: 0.0004592427867464721, Loss: 0.128592
+Epoch: [71/300] Iter:[140/148], Time: 0.3310, lr: 0.00045913958456367254, Loss: 0.051868
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Saving checkpoint at step: 72
+Saved checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint72
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint.pkl
+Removing checkpoint at /content/drive/MyDrive/jax_exercise/output/Imagenette2/swint_jax/checkpoint71
+Loss: 0.947, Mean Accuracy:  0.7915, Best Accuracy:  0.8037
+2022-06-02 02:47:11.920733: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03000684/n03000684_807.JPEG; No such file or directory
+2022-06-02 02:47:11.920794: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03425413/n03425413_12249.JPEG; No such file or directory
+2022-06-02 02:47:11.920861: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03425413/n03425413_8078.JPEG; No such file or directory
+2022-06-02 02:47:11.920913: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03445777/n03445777_7797.JPEG; No such file or directory
+2022-06-02 02:47:11.920960: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03445777/n03445777_7154.JPEG; No such file or directory
+2022-06-02 02:47:11.921018: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_958.JPEG; No such file or directory
+2022-06-02 02:47:11.921049: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_7603.JPEG; No such file or directory
+2022-06-02 02:47:11.921080: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_3586.JPEG; No such file or directory
+2022-06-02 02:47:11.921134: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n01440764/n01440764_6508.JPEG; No such file or directory
+2022-06-02 02:47:11.921344: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03417042/n03417042_5239.JPEG; No such file or directory
+2022-06-02 02:47:11.921371: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_364.JPEG; No such file or directory
+2022-06-02 02:47:11.922142: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_1078.JPEG; No such file or directory
+2022-06-02 02:47:11.922228: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03888257/n03888257_5218.JPEG; No such file or directory
+2022-06-02 02:47:11.922335: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03000684/n03000684_8103.JPEG; No such file or directory
+2022-06-02 02:47:11.922404: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_709.JPEG; No such file or directory
+2022-06-02 02:47:11.922469: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03445777/n03445777_6388.JPEG; No such file or directory
+2022-06-02 02:47:11.922503: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03000684/n03000684_6606.JPEG; No such file or directory
+2022-06-02 02:47:11.922556: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03417042/n03417042_10256.JPEG; No such file or directory
+2022-06-02 02:47:11.922584: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03417042/n03417042_3329.JPEG; No such file or directory
+2022-06-02 02:47:11.922609: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03417042/n03417042_7209.JPEG; No such file or directory
+2022-06-02 02:47:11.922949: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n03417042/n03417042_3633.JPEG; No such file or directory
+2022-06-02 02:47:11.923104: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at whole_file_read_ops.cc:116 : NOT_FOUND: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n01440764/ILSVRC2012_val_00018317.JPEG; No such file or directory
+Traceback (most recent call last):
+  File "main_jax.py", line 176, in <module>
+    key1, iter_times, writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 158, in train_jax
+    for i_iter, batch in enumerate(train_ds.as_numpy_iterator()):
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/dataset_ops.py", line 4407, in __next__
+    return nest.map_structure(to_numpy, next(self._iterator))
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/iterator_ops.py", line 836, in __next__
+    return self._next_internal()
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/iterator_ops.py", line 822, in _next_internal
+    output_shapes=self._flat_output_shapes)
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/ops/gen_dataset_ops.py", line 2923, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py", line 7186, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.NotFoundError: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2/train/n02102040/n02102040_7603.JPEG; No such file or directory
+	 [[{{node ReadFile}}]] [Op:IteratorGetNext]

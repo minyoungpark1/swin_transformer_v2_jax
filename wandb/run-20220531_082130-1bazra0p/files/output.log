@@ -1,0 +1,259 @@
+=> creating /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch
+=> creating /content/drive/MyDrive/jax_exercise/log/imagenet/swinv2_tiny/swint_torch_2022-05-31-08-21
+Creating dataloaders...
+Found 9469 files belonging to 10 classes.
+Found 3925 files belonging to 10 classes.
+Loading Swin Transformer v2 model...
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_torch.yaml', data_path=None, disable_amp=False, eval=False, name='swint_jax', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2
+  IMG_SIZE: 256
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 10
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 8
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 304
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+2022-05-31 08:21:35.180289: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:39] Overriding allow_growth setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker:
+Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+Epoch: [0/300] Iter:[0/148.0], Time: 34.7808, lr: 5.00003807246685e-07, Loss: 2.271763
+2.2717626
+2.4976087
+2.300745
+2.3710728
+2.3491113
+2.332654
+2.372239
+2.228907
+2.2297907
+2.2382808
+Epoch: [0/300] Iter:[10/148.0], Time: 3.6875, lr: 2.1875021047890186e-06, Loss: 2.214574
+2.2145739
+2.1153226
+2.2739272
+2.2038546
+2.2462606
+2.1320453
+2.1715703
+Epoch: [0/300] Iter:[20/148.0], Time: 2.2066, lr: 3.875000402331352e-06, Loss: 2.175903
+2.0984378
+2.1908784
+2.2097182
+2.1759033
+2.2345705
+2.2029684
+2.0874374
+2.1361141
+2.0933976
+2.138532
+2.1938803
+Epoch: [0/300] Iter:[30/148.0], Time: 1.6816, lr: 5.562498699873686e-06, Loss: 2.145393
+2.227427
+2.009726
+2.1453934
+2.2314494
+2.2199283
+2.1035357
+2.2722044
+2.1276188
+2.048387
+2.2173326
+Epoch: [0/300] Iter:[40/148.0], Time: 1.4126, lr: 7.2499969974160194e-06, Loss: 2.131948
+2.0905542
+2.1854486
+2.1319475
+2.049415
+2.1858356
+2.197892
+2.006499
+2.0143814
+2.0633926
+2.0460968
+Epoch: [0/300] Iter:[50/148.0], Time: 1.2489, lr: 8.937495294958353e-06, Loss: 1.882475
+2.0692916
+2.067306
+1.8824749
+2.0857346
+2.051273
+1.9742345
+2.125276
+1.9160426
+2.027937
+2.1551657
+2.0867672
+Epoch: [0/300] Iter:[60/148.0], Time: 1.1389, lr: 1.0624993592500687e-05, Loss: 1.864161
+2.1798668
+1.8641607
+2.037362
+1.9543018
+2.0628772
+1.9113493
+2.1691487
+2.1004455
+1.88154
+1.9908111
+Epoch: [0/300] Iter:[70/148.0], Time: 1.0599, lr: 1.231249189004302e-05, Loss: 2.059704
+2.1302931
+2.0597038
+2.0339193
+2.0214856
+1.9784276
+1.989863
+2.0306697
+1.9306077
+2.171153
+2.0106738
+1.8144765
+Epoch: [0/300] Iter:[80/148.0], Time: 1.0004, lr: 1.3999990187585354e-05, Loss: 1.933244
+1.9332442
+1.945206
+2.1007376
+2.0091047
+1.8575008
+2.1099007
+1.8022014
+2.0257719
+2.1942177
+2.0855706
+Epoch: [0/300] Iter:[90/148.0], Time: 0.9540, lr: 1.5687488485127687e-05, Loss: 1.887860
+1.8878598
+2.1429162
+1.8466978
+2.042214
+1.9779873
+1.9051841
+1.8832557
+1.9302412
+2.0189626
+1.9550967
+Epoch: [0/300] Iter:[100/148.0], Time: 0.9167, lr: 1.7375015886500478e-05, Loss: 1.760661
+1.7606605
+2.0511587
+1.8829627
+1.8177885
+1.8862987
+1.9950136
+1.8200519
+Epoch: [0/300] Iter:[110/148.0], Time: 0.8863, lr: 1.906251418404281e-05, Loss: 2.059953
+1.9765923
+2.0406303
+2.049748
+2.0599532
+1.9774811
+2.0207229
+2.2089198
+2.017615
+2.0022886
+2.0874476
+2.0390804
+Epoch: [0/300] Iter:[120/148.0], Time: 0.8608, lr: 2.0749983377754688e-05, Loss: 1.945311
+1.9911611
+2.0030522
+1.9453111
+2.0918825
+1.9488275
+2.1404371
+1.8828905
+Traceback (most recent call last):
+  File "main_jax.py", line 175, in <module>
+    key1, writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 149, in train_jax
+    print(loss)
+  File "/usr/lib/python3.7/functools.py", line 376, in _method
+    return self.func(*call_args, **call_keywords)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/device_array.py", line 41, in _forward_method
+    return fun(getattr(self, attrname), *args)
+KeyboardInterrupt

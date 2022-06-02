@@ -1,0 +1,216 @@
+=> creating /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch
+=> creating /content/drive/MyDrive/jax_exercise/log/imagenet/swinv2_tiny/swint_torch_2022-05-31-08-46
+Creating dataloaders...
+Found 9469 files belonging to 10 classes.
+Found 3925 files belonging to 10 classes.
+Loading Swin Transformer v2 model...
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_torch.yaml', data_path=None, disable_amp=False, eval=False, name='swint_jax', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2
+  IMG_SIZE: 256
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 10
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 8
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 304
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+2022-05-31 08:46:53.589250: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:39] Overriding allow_growth setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker:
+Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+2022-05-31 08:46:57.191691: E external/org_tensorflow/tensorflow/stream_executor/cuda/cuda_dnn.cc:377] Loaded runtime CuDNN library: 8.0.5 but source was compiled with: 8.2.4.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+2022-05-31 08:46:57.578315: E external/org_tensorflow/tensorflow/stream_executor/cuda/cuda_dnn.cc:377] Loaded runtime CuDNN library: 8.0.5 but source was compiled with: 8.2.4.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+2022-05-31 08:46:57.580976: E external/org_tensorflow/tensorflow/stream_executor/cuda/cuda_dnn.cc:377] Loaded runtime CuDNN library: 8.0.5 but source was compiled with: 8.2.4.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+Traceback (most recent call last):
+  File "main_jax.py", line 133, in <module>
+    params = model.init(init_rngs, jnp.array(batch[0]), train=True)['params']
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/traceback_util.py", line 162, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 1226, in init
+    method=method, mutable=mutable, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/traceback_util.py", line 162, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 1192, in init_with_output
+    {}, *args, rngs=rngs, method=method, mutable=mutable, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/traceback_util.py", line 162, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 1159, in apply
+    )(variables, *args, **kwargs, rngs=rngs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/core/scope.py", line 831, in wrapper
+    y = fn(root, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 1440, in scope_fn
+    return fn(module.clone(parent=scope), *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/transforms.py", line 1239, in wrapped_fn
+    return prewrapped_fn(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 350, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 648, in _call_wrapped_method
+    y = fun(self, *args, **kwargs)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/models/swin_transformer_jax.py", line 602, in __call__
+    x = self.forward_features(x, train)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/transforms.py", line 1239, in wrapped_fn
+    return prewrapped_fn(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 350, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 648, in _call_wrapped_method
+    y = fun(self, *args, **kwargs)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/models/swin_transformer_jax.py", line 589, in forward_features
+    x = self.patch_embed(x)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/transforms.py", line 1239, in wrapped_fn
+    return prewrapped_fn(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 350, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 648, in _call_wrapped_method
+    y = fun(self, *args, **kwargs)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/models/swin_transformer_jax.py", line 496, in __call__
+    x = self.proj(x).reshape(B, -1, self.embed_dim) # B Ph*Pw C
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/transforms.py", line 1239, in wrapped_fn
+    return prewrapped_fn(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 350, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/module.py", line 648, in _call_wrapped_method
+    y = fun(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/linear.py", line 415, in __call__
+    precision=self.precision
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/lax/convolution.py", line 155, in conv_general_dilated
+    preferred_element_type=preferred_element_type)
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 325, in bind
+    return self.bind_with_trace(find_top_trace(args), args, params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 328, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/core.py", line 678, in process_primitive
+    return primitive.impl(*tracers, **params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 97, in apply_primitive
+    **params)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/util.py", line 219, in wrapper
+    return cached(config._trace_context(), *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/util.py", line 212, in cached
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 116, in xla_primitive_callable
+    prim.name, donated_invars, *arg_specs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 198, in _xla_callable_uncached
+    *arg_specs).compile().unsafe_call
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 640, in compile
+    self.name, self._hlo, self._explicit_args, **self.compile_args)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 735, in from_xla_computation
+    compiled = compile_or_get_cached(backend, xla_computation, options)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 703, in compile_or_get_cached
+    return backend_compile(backend, computation, compile_options)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/profiler.py", line 206, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/jax/_src/dispatch.py", line 648, in backend_compile
+    return backend.compile(built_c, compile_options=options)
+jax._src.traceback_util.UnfilteredStackTrace: RuntimeError: UNKNOWN: Failed to determine best cudnn convolution algorithm for:
+%cudnn-conv = (f32[64,64,64,96]{2,1,3,0}, u8[0]{0}) custom-call(f32[64,256,256,3]{2,1,3,0} %copy, f32[4,4,3,96]{1,0,2,3} %copy.1), window={size=4x4 stride=4x4}, dim_labels=b01f_01io->b01f, custom_call_target="__cudnn$convForward", metadata={op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(4, 4) padding=((0, 0), (0, 0)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 lhs_shape=(64, 256, 256, 3) rhs_shape=(4, 4, 3, 96) precision=None preferred_element_type=None]" source_file="/usr/local/lib/python3.7/dist-packages/flax/linen/linear.py" source_line=415}, backend_config="{\"conv_result_scale\":1,\"activation_mode\":\"0\",\"side_input_scale\":0}"
+Original error: UNIMPLEMENTED: DNN library is not found.
+To ignore this failure and try to use a fallback algorithm (which may have suboptimal performance), use XLA_FLAGS=--xla_gpu_strict_conv_algorithm_picker=false.  Please also file a bug for the root cause of failing autotuning.
+The stack trace below excludes JAX-internal frames.
+The preceding is the original exception that occurred, unmodified.
+--------------------
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "main_jax.py", line 133, in <module>
+    params = model.init(init_rngs, jnp.array(batch[0]), train=True)['params']
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/models/swin_transformer_jax.py", line 602, in __call__
+    x = self.forward_features(x, train)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/models/swin_transformer_jax.py", line 589, in forward_features
+    x = self.patch_embed(x)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/models/swin_transformer_jax.py", line 496, in __call__
+    x = self.proj(x).reshape(B, -1, self.embed_dim) # B Ph*Pw C
+  File "/usr/local/lib/python3.7/dist-packages/flax/linen/linear.py", line 415, in __call__
+    precision=self.precision
+RuntimeError: UNKNOWN: Failed to determine best cudnn convolution algorithm for:
+%cudnn-conv = (f32[64,64,64,96]{2,1,3,0}, u8[0]{0}) custom-call(f32[64,256,256,3]{2,1,3,0} %copy, f32[4,4,3,96]{1,0,2,3} %copy.1), window={size=4x4 stride=4x4}, dim_labels=b01f_01io->b01f, custom_call_target="__cudnn$convForward", metadata={op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(4, 4) padding=((0, 0), (0, 0)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 lhs_shape=(64, 256, 256, 3) rhs_shape=(4, 4, 3, 96) precision=None preferred_element_type=None]" source_file="/usr/local/lib/python3.7/dist-packages/flax/linen/linear.py" source_line=415}, backend_config="{\"conv_result_scale\":1,\"activation_mode\":\"0\",\"side_input_scale\":0}"
+Original error: UNIMPLEMENTED: DNN library is not found.
+To ignore this failure and try to use a fallback algorithm (which may have suboptimal performance), use XLA_FLAGS=--xla_gpu_strict_conv_algorithm_picker=false.  Please also file a bug for the root cause of failing autotuning.

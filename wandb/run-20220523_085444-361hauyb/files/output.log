@@ -1,0 +1,134 @@
+=> creating /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch
+=> creating /content/drive/MyDrive/jax_exercise/log/imagenet/swinv2_tiny/swint_torch_2022-05-23-08-54
+Creating dataloaders...
+Loading Swin Transformer v2 model...
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_torch.yaml', data_path=None, disable_amp=False, eval=False, name='swint_torch', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH:
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 1000
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 7
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+/usr/local/lib/python3.7/dist-packages/torch/functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Traceback (most recent call last):
+  File "main_torch.py", line 181, in <module>
+    trainloader, criterion, optimizer, model, writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 31, in train_torch
+    for i_iter, batch in enumerate(trainloader, 0):
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/dataloader.py", line 1224, in _next_data
+    return self._process_data(data)
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/dataloader.py", line 1250, in _process_data
+    data.reraise()
+  File "/usr/local/lib/python3.7/dist-packages/torch/_utils.py", line 457, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    return self.collate_fn(data)
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/_utils/collate.py", line 172, in default_collate
+    return [default_collate(samples) for samples in transposed]  # Backwards compatibility.
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/_utils/collate.py", line 172, in <listcomp>
+    return [default_collate(samples) for samples in transposed]  # Backwards compatibility.
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/_utils/collate.py", line 180, in default_collate
+    raise TypeError(default_collate_err_msg_format.format(elem_type))
+TypeError: default_collate: batch must contain tensors, numpy arrays, numbers, dicts or lists; found <class 'PIL.Image.Image'>

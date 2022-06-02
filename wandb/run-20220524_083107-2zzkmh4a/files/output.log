@@ -1,0 +1,194 @@
+Namespace(accumulation_steps=None, amp_opt_level=None, batch_size=None, cache_mode='part', cfg='./config/swint_torch.yaml', data_path=None, disable_amp=False, eval=False, name='swint_torch', opts=None, pretrained=None, resume=None, seed=304, tag=None, throughput=False, use_checkpoint=False, zip=False)
+AMP_ENABLE: True
+AMP_OPT_LEVEL:
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: None
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE: ['']
+DATA:
+  BATCH_SIZE: 64
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /content/drive/MyDrive/jax_exercise/swin_transformer_jax/imagenette2
+  IMG_SIZE: 256
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+  ZIP_MODE: False
+EVAL_MODE: False
+LOCAL_RANK: 0
+LOG_DIR: /content/drive/MyDrive/jax_exercise/log
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: swinv2_tiny
+  NUM_CLASSES: 10
+  PRETRAINED:
+  RESUME:
+  SWIN:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    QKV_BIAS: True
+    QK_SCALE: None
+    WINDOW_SIZE: 7
+  SWINV2:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    PRETRAINED_WINDOW_SIZES: [0, 0, 0, 0]
+    QKV_BIAS: True
+    WINDOW_SIZE: 8
+  SWIN_MLP:
+    APE: False
+    DEPTHS: [2, 2, 6, 2]
+    EMBED_DIM: 96
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS: [3, 6, 12, 24]
+    PATCH_NORM: True
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  TYPE: swinv2
+OUTPUT: /content/drive/MyDrive/jax_exercise/output
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: True
+  SEQUENTIAL: False
+THROUGHPUT_MODE: False
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: True
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5e-06
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 1e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: False
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5e-07
+  WEIGHT_DECAY: 0.05
+/usr/local/lib/python3.7/dist-packages/torch/functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+=> creating /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch
+=> creating /content/drive/MyDrive/jax_exercise/log/imagenet/swinv2_tiny/swint_torch_2022-05-24-08-31
+Creating dataloaders...
+Loading Swin Transformer v2 model...
+Epoch: [0/300] Iter:[0/147], Time: 4.0884, lr: [5e-07, 5e-07], Loss: 2.328193
+Epoch: [0/300] Iter:[10/147], Time: 0.7195, lr: [5e-07, 5e-07], Loss: 2.328896
+Epoch: [0/300] Iter:[20/147], Time: 0.5519, lr: [5e-07, 5e-07], Loss: 2.316290
+Epoch: [0/300] Iter:[30/147], Time: 0.4921, lr: [5e-07, 5e-07], Loss: 2.316646
+Epoch: [0/300] Iter:[40/147], Time: 0.4616, lr: [5e-07, 5e-07], Loss: 2.312768
+Epoch: [0/300] Iter:[50/147], Time: 0.4431, lr: [5e-07, 5e-07], Loss: 2.307950
+Epoch: [0/300] Iter:[60/147], Time: 0.4308, lr: [5e-07, 5e-07], Loss: 2.304099
+Epoch: [0/300] Iter:[70/147], Time: 0.4219, lr: [5e-07, 5e-07], Loss: 2.299470
+Epoch: [0/300] Iter:[80/147], Time: 0.4151, lr: [5e-07, 5e-07], Loss: 2.295934
+Epoch: [0/300] Iter:[90/147], Time: 0.4098, lr: [5e-07, 5e-07], Loss: 2.290897
+Epoch: [0/300] Iter:[100/147], Time: 0.4056, lr: [5e-07, 5e-07], Loss: 2.288213
+Epoch: [0/300] Iter:[110/147], Time: 0.4021, lr: [5e-07, 5e-07], Loss: 2.285041
+Epoch: [0/300] Iter:[120/147], Time: 0.3993, lr: [5e-07, 5e-07], Loss: 2.280927
+Epoch: [0/300] Iter:[130/147], Time: 0.3969, lr: [5e-07, 5e-07], Loss: 2.278856
+Epoch: [0/300] Iter:[140/147], Time: 0.3947, lr: [5e-07, 5e-07], Loss: 2.275257
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch/checkpoint.pth.tar
+Loss: 2.236, Mean Accuracy:  0.1686, Best Accuracy:  0.1686
+Epoch: [1/300] Iter:[0/147], Time: 2.7142, lr: [5e-07, 5e-07], Loss: 2.260006
+Epoch: [1/300] Iter:[10/147], Time: 0.5836, lr: [5e-07, 5e-07], Loss: 2.227346
+Epoch: [1/300] Iter:[20/147], Time: 0.4812, lr: [5e-07, 5e-07], Loss: 2.227105
+Epoch: [1/300] Iter:[30/147], Time: 0.4451, lr: [5e-07, 5e-07], Loss: 2.222015
+Epoch: [1/300] Iter:[40/147], Time: 0.4264, lr: [5e-07, 5e-07], Loss: 2.217431
+Epoch: [1/300] Iter:[50/147], Time: 0.4150, lr: [5e-07, 5e-07], Loss: 2.220325
+Epoch: [1/300] Iter:[60/147], Time: 0.4073, lr: [5e-07, 5e-07], Loss: 2.217144
+Epoch: [1/300] Iter:[70/147], Time: 0.4018, lr: [5e-07, 5e-07], Loss: 2.210323
+Epoch: [1/300] Iter:[80/147], Time: 0.3976, lr: [5e-07, 5e-07], Loss: 2.207255
+Epoch: [1/300] Iter:[90/147], Time: 0.3944, lr: [5e-07, 5e-07], Loss: 2.204306
+Epoch: [1/300] Iter:[100/147], Time: 0.3917, lr: [5e-07, 5e-07], Loss: 2.203555
+Epoch: [1/300] Iter:[110/147], Time: 0.3897, lr: [5e-07, 5e-07], Loss: 2.203347
+Epoch: [1/300] Iter:[120/147], Time: 0.3880, lr: [5e-07, 5e-07], Loss: 2.201662
+Epoch: [1/300] Iter:[130/147], Time: 0.3866, lr: [5e-07, 5e-07], Loss: 2.203069
+Epoch: [1/300] Iter:[140/147], Time: 0.3851, lr: [5e-07, 5e-07], Loss: 2.203122
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch/checkpoint.pth.tar
+Loss: 2.192, Mean Accuracy:  0.1984, Best Accuracy:  0.1984
+Epoch: [2/300] Iter:[0/147], Time: 2.7301, lr: [5e-07, 5e-07], Loss: 2.184714
+Epoch: [2/300] Iter:[10/147], Time: 0.5865, lr: [5e-07, 5e-07], Loss: 2.175006
+Epoch: [2/300] Iter:[20/147], Time: 0.4827, lr: [5e-07, 5e-07], Loss: 2.166413
+Epoch: [2/300] Iter:[30/147], Time: 0.4462, lr: [5e-07, 5e-07], Loss: 2.166752
+Epoch: [2/300] Iter:[40/147], Time: 0.4272, lr: [5e-07, 5e-07], Loss: 2.171794
+Epoch: [2/300] Iter:[50/147], Time: 0.4155, lr: [5e-07, 5e-07], Loss: 2.177569
+Epoch: [2/300] Iter:[60/147], Time: 0.4079, lr: [5e-07, 5e-07], Loss: 2.176511
+Epoch: [2/300] Iter:[70/147], Time: 0.4023, lr: [5e-07, 5e-07], Loss: 2.176668
+Epoch: [2/300] Iter:[80/147], Time: 0.3982, lr: [5e-07, 5e-07], Loss: 2.177619
+Epoch: [2/300] Iter:[90/147], Time: 0.3950, lr: [5e-07, 5e-07], Loss: 2.174574
+Epoch: [2/300] Iter:[100/147], Time: 0.3923, lr: [5e-07, 5e-07], Loss: 2.172020
+Epoch: [2/300] Iter:[110/147], Time: 0.3902, lr: [5e-07, 5e-07], Loss: 2.169580
+Epoch: [2/300] Iter:[120/147], Time: 0.3884, lr: [5e-07, 5e-07], Loss: 2.169074
+Epoch: [2/300] Iter:[130/147], Time: 0.3869, lr: [5e-07, 5e-07], Loss: 2.171317
+Epoch: [2/300] Iter:[140/147], Time: 0.3856, lr: [5e-07, 5e-07], Loss: 2.173608
+=> saving checkpoint to /content/drive/MyDrive/jax_exercise/output/imagenet/swint_torch/checkpoint.pth.tar
+Loss: 2.171, Mean Accuracy:  0.2037, Best Accuracy:  0.2037
+Epoch: [3/300] Iter:[0/147], Time: 2.8015, lr: [5e-07, 5e-07], Loss: 2.257014
+Epoch: [3/300] Iter:[10/147], Time: 0.5931, lr: [5e-07, 5e-07], Loss: 2.168330
+Epoch: [3/300] Iter:[20/147], Time: 0.4871, lr: [5e-07, 5e-07], Loss: 2.157457
+Epoch: [3/300] Iter:[30/147], Time: 0.4493, lr: [5e-07, 5e-07], Loss: 2.167513
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f720d767c20>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/dataloader.py", line 1358, in __del__
+    self._shutdown_workers()
+  File "/usr/local/lib/python3.7/dist-packages/torch/utils/data/dataloader.py", line 1303, in _shutdown_workers
+    self._worker_result_queue.put((None, None))
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 87, in put
+    self._start_thread()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 170, in _start_thread
+    self._thread.start()
+  File "/usr/lib/python3.7/threading.py", line 857, in start
+    self._started.wait()
+  File "/usr/lib/python3.7/threading.py", line 552, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib/python3.7/threading.py", line 296, in wait
+    waiter.acquire()
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "main_torch.py", line 199, in <module>
+    trainloader, criterion, optimizer, model, writer_dict)
+  File "/content/drive/MyDrive/jax_exercise/swin_transformer_jax/core/function.py", line 43, in train_torch
+    optimizer.step()
+  File "/usr/local/lib/python3.7/dist-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/torch/optim/adamw.py", line 157, in step
+    maximize=group['maximize'])
+  File "/usr/local/lib/python3.7/dist-packages/torch/optim/_functional.py", line 143, in adamw
+    exp_avg.mul_(beta1).add_(grad, alpha=1 - beta1)
+KeyboardInterrupt
