@@ -8,17 +8,17 @@ This project compared the performance (training/validation speed and accuracy fo
 Since this project was done in the Colab environment, which pre-installed all the DL related packages ([PyTorch](https://pytorch.org/get-started/locally/), [JAX](https://github.com/google/jax#installation), [Tensorflow](https://www.tensorflow.org/install)), instructions for installing those packages are omitted. If you are not using the Colab, please visit the links above to install those packages.
 
 All remaining packages can be installed with the following command:
-'''shell
+```shell
 pip install -r requirements.txt
-'''
+```
 
 ### Download Imagenette dataset
 ### Train Swin-Transformer v2 (PyTorch/JAX)
-<img src='figures/imgSize256_bs64.png' width=800>
 
 
 ## Experiment & results
 With batch size=64 and image size=(256,256) settings, JAX was 21.9% faster than PyTorch during training and 59.6% faster during validation.
+<img src='figures/imgSize256_bs64.png' width=800>
 
 
 ## Discussion
