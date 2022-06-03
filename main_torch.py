@@ -191,15 +191,16 @@ if __name__ == '__main__':
     start = timeit.default_timer()
     end_epoch = config.TRAIN.EPOCHS
     num_iters = config.TRAIN.EPOCHS * epoch_iters
+    iter_times = {'train': [], 'valid': []}
 
     for epoch in range(last_epoch, end_epoch):
 
         train_loss = train_torch(config, epoch, config.TRAIN.EPOCHS, 
             epoch_iters, config.TRAIN.BASE_LR, num_iters,
-            trainloader, criterion, optimizer, model, lr_scheduler, writer_dict)
+            trainloader, criterion, optimizer, model, lr_scheduler, iter_times, writer_dict)
 
         valid_loss, mean_acc = validate_torch(config, validloader, criterion, model, 
-        writer_dict)
+        iter_times, writer_dict)
 
         wandb.log({
             "Learning Rate": optimizer.param_groups[0]["lr"],
@@ -231,6 +232,10 @@ if __name__ == '__main__':
 
     torch.save(model.state_dict(),
             os.path.join(final_output_dir, 'final_state.pth'))
+
+    save_path = os.path.join(final_output_dir, 'iter_times.pkl')
+    with open(save_path, 'wb') as f:
+        pickle.dump(iter_times, f, protocol=4)
 
     writer_dict['writer'].close()
     end = timeit.default_timer()

@@ -1,12 +1,12 @@
 DATA:
   IMG_SIZE: 256
-  BATCH_SIZE: 64
+  BATCH_SIZE: 32
   DATASET: Imagenette2
   DATA_PATH: '/content/drive/MyDrive/jax_exercise/imagenette2'
 
 MODEL:
-  TYPE: swinv2
-  NAME: swinv2_tiny
+  TYPE: swinv2_torch
+  NAME: swint
   DROP_PATH_RATE: 0.2
   NUM_CLASSES: 10
   SWINV2:
@@ -16,8 +16,6 @@ MODEL:
     WINDOW_SIZE: 8
 
 TRAIN:
-#    BASE_LR: 8e-4
-#    WEIGHT_DECAY: 5e-4
     LR_SCHEDULER:
         NAME: 'cosine'
 

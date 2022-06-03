@@ -1,0 +1,23 @@
+DATA:
+  IMG_SIZE: 256
+  BATCH_SIZE: 64
+  DATASET: Imagenette2
+  DATA_PATH: '/content/drive/MyDrive/jax_exercise/imagenette2'
+
+MODEL:
+  TYPE: swinv2_jax
+  NAME: swint
+  DROP_PATH_RATE: 0.2
+  NUM_CLASSES: 10
+  SWINV2:
+    EMBED_DIM: 96
+    DEPTHS: [ 2, 2, 6, 2 ]
+    NUM_HEADS: [ 3, 6, 12, 24 ]
+    WINDOW_SIZE: 8
+
+TRAIN:
+    LR_SCHEDULER:
+        NAME: 'cosine'
+
+OUTPUT: '/content/drive/MyDrive/jax_exercise/output'
+LOG_DIR: '/content/drive/MyDrive/jax_exercise/log'
