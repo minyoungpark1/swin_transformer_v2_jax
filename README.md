@@ -7,12 +7,16 @@ This project compared the performance (training/validation speed and accuracy fo
 ### Installation
 Since this project was done in the Colab environment, which pre-installed all the DL related packages ([PyTorch](https://pytorch.org/get-started/locally/), [JAX](https://github.com/google/jax#installation), [Tensorflow](https://www.tensorflow.org/install)), instructions for installing those packages are omitted. If you are not using the Colab, please visit the links above to install those packages.
 
-All remaining packages can be installed with the following command:
+All the remaining packages can be installed with the following command:
 ```shell
 pip install -r requirements.txt
 ```
 
 ### Download Imagenette dataset
+This project used Imagenette dataset. Imagenette dataset is a subset of 10 classes from Imagenet (tench, English springer, cassette player, chain saw, church, French horn, garbage truck, gas pump, golf ball, parachute). If you want to train/test yourself, please click "Imagenette" above to download the dataset. 
+
+Its file size is 1.45 GB, and contains 9,469 training images and 3,925 validation images.
+
 ### Train Swin-Transformer v2 (PyTorch/JAX)
 
 
