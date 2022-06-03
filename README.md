@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 
 ### Download Imagenette dataset
-This project used Imagenette dataset. Imagenette dataset is a subset of 10 classes from Imagenet (tench, English springer, cassette player, chain saw, church, French horn, garbage truck, gas pump, golf ball, parachute). If you want to train/test yourself, please click "Imagenette" above to download the dataset. 
+This project used [Imagenette](https://s3.amazonaws.com/fast-ai-imageclas/imagenette2.tgz) dataset. Imagenette dataset is a subset of 10 classes from Imagenet (tench, English springer, cassette player, chain saw, church, French horn, garbage truck, gas pump, golf ball, parachute). If you want to train/test yourself, please click "Imagenette" above to download the dataset. 
 
 Its file size is 1.45 GB, and contains 9,469 training images and 3,925 validation images.
 
