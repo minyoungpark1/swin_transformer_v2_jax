@@ -21,13 +21,14 @@ Its file size is 1.45 GB, and contains 9,469 training images and 3,925 validatio
 
 
 ## Experiment & results
-With image size=(256,256) and batch size 32 and 64 settings, both the JAX and the PyTorch took significantly longer during the first epoch, especially during the first iteration (batch). I assume this was caused by GPU memory allocation during the first run. However PyTorch took longer than even after the first iteration, and the speed became faster when the second epoch started. 
+With image size=(256,256) and batch size 32 and 64 settings, both the JAX and the PyTorch took significantly longer during the first epoch, especially during the first iteration (batch). I assume this was caused by GPU memory allocation during the first run. 
+However PyTorch ran slowly even after the first iteration, and the speed became faster when the second epoch started. 
 <img src='figures/five_epoch_speed.png' width=800>
 
 Including the first epoch, with batch size = 32 and 64, JAX was 27.3% and 28.0% faster than PyTorch respectively during training. Also, JAX was 140.5% and 147.4% faster than PyTorch respectively during validation.
 <img src='figures/epoch_speed.png' width=800>
 
-Without the first epoch, the speed differences were reduced to 24.9% during training for both batch sizes, and 132.1% and 137.7% respectively during validation with batch size 32 and 64.
+Without the first epoch, the speed differences were reduced to 24.9% during training for the both batch sizes, and 132.1% and 137.7% respectively during validation with batch size 32 and 64.
 
 ## Discussion
 - Factors caused the bottleneck
